@@ -4,8 +4,8 @@
   const DATA_URL = "./commandsSheet.json";
   const PAGE_SIZE = 9;
 
-  const grid = document.getElementById("command-grid");
-  const template = document.getElementById("command-card-template");
+  const list = document.getElementById("command-grid");
+  const template = document.getElementById("command-row-template");
   const state = document.getElementById("catalog-state");
   const emptyState = document.getElementById("empty-state");
   const searchInput = document.getElementById("command-search");
@@ -22,6 +22,7 @@
   let activeCategory = "all";
   let searchTerm = "";
   let currentPage = 1;
+  let expandedId = null;
 
   const hasValue = value => {
     if (value === null || value === undefined) return false;
@@ -34,101 +35,102 @@
     .replace(/[-_]/g, " ")
     .replace(/\b\w/g, char => char.toUpperCase());
 
-  function addPill(parent, value, className = "") {
+  const makeElement = (tag, className, text) => {
+    const element = document.createElement(tag);
+    if (className) element.className = className;
+    if (hasValue(text)) element.textContent = String(text);
+    return element;
+  };
+
+  function addDetailLine(parent, label, value) {
     if (!hasValue(value)) return;
-    const pill = document.createElement("span");
-    pill.className = `meta-pill ${className}`.trim();
-    pill.textContent = pretty(value);
-    parent.appendChild(pill);
+    const line = makeElement("div", "detail-line");
+    line.append(makeElement("span", "detail-label", label));
+    line.append(makeElement("span", "detail-value", value));
+    parent.append(line);
   }
 
-  function makeCard(command) {
-    const fragment = template.content.cloneNode(true);
-    const card = fragment.querySelector(".command-card");
-    const category = card.querySelector(".command-category");
-    const status = card.querySelector(".command-status");
-    const name = card.querySelector(".command-name");
-    const copy = card.querySelector(".copy-button");
-    const meta = card.querySelector(".command-meta");
-    const description = card.querySelector(".command-description");
-    const aliases = card.querySelector(".command-aliases");
-    const tags = card.querySelector(".command-tags");
-    const date = card.querySelector(".command-date");
-
-    if (hasValue(command.category)) category.textContent = pretty(command.category);
-    else category.hidden = true;
-
-    if (hasValue(command.status)) {
-      status.textContent = pretty(command.status);
-      status.classList.add(String(command.status).toLowerCase());
-    } else status.hidden = true;
-
-    name.textContent = hasValue(command.name) ? command.name : "Unnamed command";
-    copy.addEventListener("click", async () => {
-      const original = copy.textContent;
-      try {
-        await navigator.clipboard.writeText(command.name || "");
-        copy.textContent = "COPIED";
-      } catch {
-        copy.textContent = "FAILED";
-      }
-      window.setTimeout(() => { copy.textContent = original; }, 1100);
-    });
-
-    addPill(meta, command.type);
-    addPill(meta, command.access, String(command.access || "").toLowerCase());
-    addPill(meta, command.version);
+  function buildDetail(command) {
+    const detail = makeElement("div", "detail-content");
 
     if (hasValue(command.description)) {
-      description.textContent = command.description;
-      description.hidden = false;
+      detail.append(makeElement("p", "command-description", command.description));
     }
 
+    const metadata = makeElement("div", "detail-grid");
+    addDetailLine(metadata, "TYPE", hasValue(command.type) ? pretty(command.type) : null);
+    addDetailLine(metadata, "ACCESS", hasValue(command.access) ? pretty(command.access) : null);
+    addDetailLine(metadata, "VERSION", command.version);
+    addDetailLine(metadata, "RELEASE DATE", command.releaseDate);
+    if (metadata.children.length) detail.append(metadata);
+
     if (Array.isArray(command.aliases) && command.aliases.some(hasValue)) {
-      aliases.textContent = `ALIASES  ·  ${command.aliases.filter(hasValue).join(", ")}`;
-      aliases.hidden = false;
+      const aliases = makeElement("div", "detail-extra");
+      aliases.append(makeElement("span", "detail-label", "ALIASES"));
+      aliases.append(makeElement("span", "detail-value", command.aliases.filter(hasValue).join(", ")));
+      detail.append(aliases);
     }
 
     if (Array.isArray(command.tags) && command.tags.some(hasValue)) {
-      command.tags.filter(hasValue).forEach(tag => {
-        const el = document.createElement("span");
-        el.className = "tag";
-        el.textContent = `#${tag}`;
-        tags.appendChild(el);
-      });
-      tags.hidden = false;
+      const tags = makeElement("div", "detail-tags");
+      command.tags.filter(hasValue).forEach(tag => tags.append(makeElement("span", "tag", `#${tag}`)));
+      detail.append(tags);
     }
 
-    if (hasValue(command.releaseDate)) {
-      date.textContent = `RELEASED  ·  ${command.releaseDate}`;
-      date.hidden = false;
+    if (!detail.children.length) {
+      detail.append(makeElement("p", "detail-empty", "No additional information available."));
+    }
+    return detail;
+  }
+
+  function makeRow(command) {
+    const fragment = template.content.cloneNode(true);
+    const row = fragment.querySelector(".command-row");
+    const expand = row.querySelector(".expand-button");
+    const name = row.querySelector(".command-name");
+    const category = row.querySelector(".command-category");
+    const status = row.querySelector(".command-status");
+    const copy = row.querySelector(".copy-button");
+
+    row.dataset.commandId = String(command.id ?? command.name ?? "");
+    expand.dataset.action = "expand";
+    copy.dataset.action = "copy";
+    name.textContent = hasValue(command.name) ? command.name : "Unnamed command";
+    category.textContent = hasValue(command.category) ? pretty(command.category) : "UNCATEGORIZED";
+    if (hasValue(command.status)) {
+      status.textContent = pretty(command.status);
+      status.classList.add(String(command.status).toLowerCase().replace(/[^a-z0-9_-]/g, ""));
+    } else {
+      status.hidden = true;
     }
 
-    if (!meta.children.length) meta.hidden = true;
+    if (expandedId !== null && String(expandedId) === row.dataset.commandId) {
+      expand.setAttribute("aria-expanded", "true");
+      row.classList.add("is-expanded");
+      const detail = row.querySelector(".command-detail");
+      detail.hidden = false;
+      detail.append(buildDetail(command));
+    }
     return fragment;
   }
 
   function buildFilters() {
-    const categories = [...new Set(commands
-      .map(item => item.category)
-      .filter(hasValue))].sort((a, b) => a.localeCompare(b));
+    const categories = [...new Set(commands.map(item => item.category).filter(hasValue))]
+      .sort((a, b) => String(a).localeCompare(String(b)));
 
-    filters.replaceChildren();
-    const all = document.createElement("button");
+    const fragment = document.createDocumentFragment();
+    const all = makeElement("button", "filter-chip selected", "All commands");
     all.type = "button";
-    all.className = "filter-chip selected";
     all.dataset.category = "all";
-    all.textContent = "All commands";
-    filters.appendChild(all);
+    fragment.append(all);
 
     categories.forEach(category => {
-      const button = document.createElement("button");
+      const button = makeElement("button", "filter-chip", pretty(category));
       button.type = "button";
-      button.className = "filter-chip";
       button.dataset.category = category;
-      button.textContent = pretty(category);
-      filters.appendChild(button);
+      fragment.append(button);
     });
+    filters.replaceChildren(fragment);
   }
 
   function getFilteredCommands() {
@@ -152,16 +154,14 @@
 
     const start = (currentPage - 1) * PAGE_SIZE;
     const pageItems = filtered.slice(start, start + PAGE_SIZE);
-
-    // Only the current page is turned into DOM cards.
     const fragment = document.createDocumentFragment();
-    pageItems.forEach(command => fragment.appendChild(makeCard(command)));
-    grid.replaceChildren(fragment);
+
+    pageItems.forEach(command => fragment.append(makeRow(command)));
+    list.replaceChildren(fragment);
 
     count.textContent = String(filtered.length);
     emptyState.hidden = filtered.length !== 0;
     pagination.hidden = filtered.length <= PAGE_SIZE;
-
     prevButton.disabled = currentPage <= 1;
     nextButton.disabled = currentPage >= totalPages;
     pageIndicator.textContent = `Page ${currentPage} of ${totalPages}`;
@@ -169,9 +169,73 @@
 
   function goToPage(page) {
     currentPage = page;
+    expandedId = null;
     render();
     document.getElementById("commands").scrollIntoView({ behavior: "smooth", block: "start" });
   }
+
+  async function copyCommand(button, command) {
+    const original = button.textContent;
+    try {
+      await navigator.clipboard.writeText(command.name || "");
+      button.textContent = "COPIED";
+      button.classList.add("copied");
+    } catch {
+      button.textContent = "FAILED";
+    }
+    window.setTimeout(() => {
+      if (!button.isConnected) return;
+      button.textContent = original;
+      button.classList.remove("copied");
+    }, 1100);
+  }
+
+  list.addEventListener("click", event => {
+    const actionButton = event.target.closest("[data-action]");
+    if (!actionButton) return;
+
+    const row = actionButton.closest(".command-row");
+    if (!row) return;
+    const command = commands.find(item =>
+      String(item.id ?? item.name ?? "") === row.dataset.commandId
+    );
+    if (!command) return;
+
+    if (actionButton.dataset.action === "copy") {
+      copyCommand(actionButton, command);
+      return;
+    }
+
+    if (actionButton.dataset.action === "expand") {
+      const detail = row.querySelector(".command-detail");
+      const isOpen = actionButton.getAttribute("aria-expanded") === "true";
+
+      // Keep only one expanded detail mounted at a time.
+      if (expandedId !== null && String(expandedId) !== row.dataset.commandId) {
+        const previous = list.querySelector(".command-row.is-expanded");
+        if (previous) {
+          previous.classList.remove("is-expanded");
+          previous.querySelector(".expand-button").setAttribute("aria-expanded", "false");
+          previous.querySelector(".command-detail").replaceChildren();
+          previous.querySelector(".command-detail").hidden = true;
+        }
+      }
+
+      if (isOpen) {
+        expandedId = null;
+        actionButton.setAttribute("aria-expanded", "false");
+        row.classList.remove("is-expanded");
+        detail.replaceChildren();
+        detail.hidden = true;
+      } else {
+        expandedId = row.dataset.commandId;
+        actionButton.setAttribute("aria-expanded", "true");
+        row.classList.add("is-expanded");
+        detail.replaceChildren(buildDetail(command));
+        detail.hidden = false;
+      }
+    }
+  });
 
   async function init() {
     try {
@@ -197,6 +261,7 @@
   searchInput.addEventListener("input", event => {
     searchTerm = event.target.value.trim();
     currentPage = 1;
+    expandedId = null;
     render();
   });
 
@@ -205,6 +270,7 @@
     if (!button) return;
     activeCategory = button.dataset.category;
     currentPage = 1;
+    expandedId = null;
     filters.querySelectorAll(".filter-chip").forEach(chip => {
       chip.classList.toggle("selected", chip === button);
     });
@@ -229,6 +295,7 @@
       searchInput.value = "";
       searchTerm = "";
       currentPage = 1;
+      expandedId = null;
       searchInput.blur();
       render();
     }

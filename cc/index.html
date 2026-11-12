@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#080f1d">
-  <meta name="description" content="Crystal 2.0.1 command center by SkyGhostID.">
-  <title>Crystal 2.0.1 | Command Center</title>
+  <meta name="description" content="Crystal command center by SkyGhostID.">
+  <title>Crystal | Command Center</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,12 +13,10 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
   <header class="topbar">
-    <a class="brand" href="#" aria-label="Crystal home">
-      <span class="brand-mark">C</span>
-      <span>CRYSTAL<span class="brand-version">/ 2.0.1</span></span>
+    <a class="brand" href="#overview" aria-label="Crystal home">
+      <span class="brand-mark">◇</span>
+      <span>CRYSTAL<span class="brand-version">/ COMMANDS</span></span>
     </a>
     <nav class="nav-links" aria-label="Main navigation">
       <a href="#overview">Overview</a>
@@ -52,7 +50,7 @@
 
       <div class="toolbar">
         <label class="search-box">
-          <span class="search-icon">⌕</span>
+          <span class="search-icon" aria-hidden="true">⌕</span>
           <input id="command-search" type="search" placeholder="Search command, type, or tag..." autocomplete="off">
           <kbd>/</kbd>
         </label>
@@ -66,7 +64,8 @@
       <div class="catalog-state" id="catalog-state" role="status" aria-live="polite">
         <span class="loader"></span> Loading command index...
       </div>
-      <div class="command-grid" id="command-grid"></div>
+      <section class="command-list" id="command-grid" aria-label="Command list"></section>
+
       <nav class="pagination" id="pagination" aria-label="Command pages" hidden>
         <button class="page-button" id="prev-page" type="button" disabled>← Previous</button>
         <span class="page-indicator" id="page-indicator" aria-live="polite">Page 1 of 1</span>
@@ -95,21 +94,20 @@
     <span>CRYSTAL / COMMAND CENTER</span>
   </footer>
 
-  <template id="command-card-template">
-    <article class="command-card">
-      <div class="card-topline">
-        <span class="command-category"></span>
-        <span class="command-status"></span>
-      </div>
-      <div class="command-name-row">
-        <h3 class="command-name"></h3>
+  <template id="command-row-template">
+    <article class="command-row">
+      <div class="command-main">
+        <button class="expand-button" type="button" aria-expanded="false">
+          <span class="expand-chevron" aria-hidden="true">›</span>
+          <span class="command-identity">
+            <span class="command-name"></span>
+            <span class="command-category"></span>
+          </span>
+          <span class="command-status"></span>
+        </button>
         <button class="copy-button" type="button" aria-label="Copy command" title="Copy command">COPY</button>
       </div>
-      <div class="command-meta"></div>
-      <div class="command-description" hidden></div>
-      <div class="command-aliases" hidden></div>
-      <div class="command-tags" hidden></div>
-      <div class="command-date" hidden></div>
+      <div class="command-detail" hidden></div>
     </article>
   </template>
 </body>
