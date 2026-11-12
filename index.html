@@ -22,7 +22,7 @@
       <a href="#about" data-id="Tentang" data-en="About">Tentang</a>
       <a href="#features" data-id="Fitur" data-en="Features">Fitur</a>
       <a href="#services" data-id="Layanan" data-en="Services">Layanan</a>
-      <a href="#commands" data-id="Commands" data-en="Commands">Commands</a>
+      <a href="/cc" data-id="Commands" data-en="Commands">Commands</a>
       <a href="#faq" data-id="FAQ" data-en="FAQ">FAQ</a>
     </nav>
 
@@ -52,7 +52,7 @@
         <div class="hero-actions">
           <a href="https://wa.me/6281248030605" class="btn btn-primary" target="_blank" rel="noopener noreferrer"
              data-id="Mulai Terhubung ↗" data-en="Get Connected ↗">Mulai Terhubung ↗</a>
-          <a href="#commands" class="btn btn-secondary" data-id="Lihat Commands" data-en="Explore Commands">Lihat Commands</a>
+          <a href="/cc" class="btn btn-secondary" data-id="Lihat Commands" data-en="Explore Commands">Lihat Commands</a>
         </div>
       </div>
       <div class="hero-visual">
@@ -115,116 +115,6 @@
       </div>
     </section>
 
-    <!-- COMMAND CENTER -->
-    <section class="section commands-section" id="commands">
-      <div class="section-heading">
-        <span class="eyebrow">04 / COMMAND CENTER</span>
-        <h2 data-id="Kenali perintah Crystal." data-en="Explore Crystal commands.">Kenali perintah Crystal.</h2>
-        <p data-id="Sebelum integrasi AI tersedia, Crystal menggunakan command khusus. Ketik perintah dengan awalan tanda seru (!)."
-           data-en="Before AI integration is available, Crystal uses dedicated commands. Start each command with an exclamation mark (!).">
-          Sebelum integrasi AI tersedia, Crystal menggunakan command khusus. Ketik perintah dengan awalan tanda seru (!).
-        </p>
-      </div>
-
-      <div class="command-intro">
-        <div>
-          <span class="command-kicker">CRYSTAL COMMAND LINE</span>
-          <h3 data-id="Satu awalan. Banyak fungsi." data-en="One prefix. Multiple functions.">Satu awalan. Banyak fungsi.</h3>
-          <p data-id="Gunakan !menu untuk membuka daftar perintah utama, atau !menu all untuk melihat seluruh command."
-             data-en="Use !menu to open the main command list, or !menu all to view every command.">
-            Gunakan !menu untuk membuka daftar perintah utama, atau !menu all untuk melihat seluruh command.
-          </p>
-        </div>
-        <button class="copy-command" type="button" data-copy="!menu"><code>!menu</code><span data-id="Salin" data-en="Copy">Salin</span></button>
-      </div>
-
-      <div class="command-toolbar">
-        <div class="command-filters" role="group" aria-label="Filter command category">
-          <button class="filter-btn active" type="button" data-filter="all" data-id="Semua" data-en="All">Semua</button>
-          <button class="filter-btn" type="button" data-filter="general">General</button>
-          <button class="filter-btn" type="button" data-filter="profile">Profile</button>
-          <button class="filter-btn" type="button" data-filter="image">Image</button>
-          <button class="filter-btn" type="button" data-filter="developer">Developer</button>
-        </div>
-        <label class="command-search">
-          <span class="sr-only">Search commands</span>
-          <input id="commandSearch" type="search" placeholder="Cari command..." data-placeholder-id="Cari command..." data-placeholder-en="Search commands..." autocomplete="off">
-        </label>
-      </div>
-
-      <div class="command-grid" id="commandGrid">
-        <article class="command-card" data-category="general" data-search="menu all help ping status version about">
-          <div class="command-card-top"><span class="command-category">GENERAL</span><span class="command-symbol">⌘</span></div>
-          <h3>Menu & System</h3>
-          <p data-id="Navigasi, bantuan, dan informasi sistem Crystal." data-en="Navigation, help, and Crystal system information.">Navigasi, bantuan, dan informasi sistem Crystal.</p>
-          <div class="command-list">
-            <div class="command-line"><code>!menu</code><button class="copy-command" type="button" data-copy="!menu" aria-label="Copy !menu">Copy</button></div>
-            <div class="command-line"><code>!menu all</code><button class="copy-command" type="button" data-copy="!menu all" aria-label="Copy !menu all">Copy</button></div>
-            <div class="command-line"><code>!help</code><button class="copy-command" type="button" data-copy="!help" aria-label="Copy !help">Copy</button></div>
-            <div class="command-line"><code>!ping</code><button class="copy-command" type="button" data-copy="!ping" aria-label="Copy !ping">Copy</button></div>
-            <div class="command-line"><code>!status</code><button class="copy-command" type="button" data-copy="!status" aria-label="Copy !status">Copy</button></div>
-            <div class="command-line"><code>!version</code><button class="copy-command" type="button" data-copy="!version" aria-label="Copy !version">Copy</button></div>
-            <div class="command-line"><code>!about</code><button class="copy-command" type="button" data-copy="!about" aria-label="Copy !about">Copy</button></div>
-          </div>
-        </article>
-
-        <article class="command-card" data-category="profile" data-search="profile register name tier user vip vvip info edit">
-          <div class="command-card-top"><span class="command-category">PROFILE SYSTEM</span><span class="command-symbol">◈</span></div>
-          <h3>Profile & Membership</h3>
-          <p data-id="Registrasi akun dan pengelolaan informasi keanggotaan." data-en="Account registration and membership information management.">Registrasi akun dan pengelolaan informasi keanggotaan.</p>
-          <div class="command-list">
-            <div class="command-line"><code>!profile</code><button class="copy-command" type="button" data-copy="!profile">Copy</button></div>
-            <div class="command-line"><code>!profile info</code><button class="copy-command" type="button" data-copy="!profile info">Copy</button></div>
-            <div class="command-line"><code>!profile register &lt;name&gt; -tier user</code><button class="copy-command" type="button" data-copy="!profile register Your Name -tier user">Copy</button></div>
-            <div class="command-line"><code>!profile register &lt;name&gt; -tier vip</code><button class="copy-command" type="button" data-copy="!profile register Your Name -tier vip">Copy</button></div>
-            <div class="command-line"><code>!profile register &lt;name&gt; -tier vvip</code><button class="copy-command" type="button" data-copy="!profile register Your Name -tier vvip">Copy</button></div>
-            <div class="command-line"><code>!profile edit</code><button class="copy-command" type="button" data-copy="!profile edit">Copy</button></div>
-          </div>
-          <div class="approval-note">
-            <strong data-id="Validasi keanggotaan" data-en="Membership review">Validasi keanggotaan</strong>
-            <p data-id="Pengajuan VIP/VVIP berstatus pending sampai ditinjau dan disetujui Owner. Persetujuan otomatis dapat diterapkan setelah API dan sistem pembayaran resmi tersedia."
-               data-en="VIP/VVIP applications remain pending until reviewed and approved by the Owner. Automatic approval may be introduced once the official API and payment system are available.">
-              Pengajuan VIP/VVIP berstatus pending sampai ditinjau dan disetujui Owner. Persetujuan otomatis dapat diterapkan setelah API dan sistem pembayaran resmi tersedia.
-            </p>
-            <div class="status-pills"><span>PENDING</span><span>APPROVED</span><span>REJECTED</span></div>
-          </div>
-        </article>
-
-        <article class="command-card" data-category="image" data-search="image help compress convert resize">
-          <div class="command-card-top"><span class="command-category">IMAGE TOOLS</span><span class="command-symbol">▧</span></div>
-          <h3>Image Utilities</h3>
-          <p data-id="Perintah untuk bantuan dan pemrosesan gambar." data-en="Commands for image help and image processing.">Perintah untuk bantuan dan pemrosesan gambar.</p>
-          <div class="command-list">
-            <div class="command-line"><code>!image</code><button class="copy-command" type="button" data-copy="!image">Copy</button></div>
-            <div class="command-line"><code>!image help</code><button class="copy-command" type="button" data-copy="!image help">Copy</button></div>
-            <div class="command-line"><code>!image compress</code><button class="copy-command" type="button" data-copy="!image compress">Copy</button></div>
-            <div class="command-line"><code>!image convert</code><button class="copy-command" type="button" data-copy="!image convert">Copy</button></div>
-            <div class="command-line"><code>!image resize</code><button class="copy-command" type="button" data-copy="!image resize">Copy</button></div>
-          </div>
-          <span class="command-footnote" data-id="Ketersediaan fitur mengikuti versi bot yang aktif." data-en="Feature availability depends on the active bot version.">Ketersediaan fitur mengikuti versi bot yang aktif.</span>
-        </article>
-
-        <article class="command-card" data-category="developer" data-search="skyghostid dev hub info status">
-          <div class="command-card-top"><span class="command-category">DEVELOPER HUB</span><span class="command-symbol">⌘</span></div>
-          <h3>SkyGhostID</h3>
-          <p data-id="Informasi developer dan ekosistem di balik Crystal 2." data-en="Developer and ecosystem information behind Crystal 2.">Informasi developer dan ekosistem di balik Crystal 2.</p>
-          <div class="command-list">
-            <div class="command-line"><code>!skyghostid</code><button class="copy-command" type="button" data-copy="!skyghostid">Copy</button></div>
-            <div class="command-line"><code>!skyghostid info</code><button class="copy-command" type="button" data-copy="!skyghostid info">Copy</button></div>
-            <div class="command-line"><code>!skyghostid status</code><button class="copy-command" type="button" data-copy="!skyghostid status">Copy</button></div>
-          </div>
-          <a class="text-link" href="https://hostinginzel.my.id" target="_blank" rel="noopener noreferrer">SkyGhostID website ↗</a>
-        </article>
-      </div>
-      <p class="no-results" id="noCommands" hidden data-id="Command tidak ditemukan." data-en="No commands found.">Command tidak ditemukan.</p>
-      <div class="command-disclaimer">
-        <span class="pulse"></span>
-        <p data-id="Catatan: daftar ini adalah katalog command. Beberapa fitur masih dalam pengembangan dan hanya dapat digunakan jika sudah tersedia pada bot Crystal."
-           data-en="Note: this is a command catalog. Some features are still in development and can only be used when available in the Crystal bot.">
-          Catatan: daftar ini adalah katalog command. Beberapa fitur masih dalam pengembangan dan hanya dapat digunakan jika sudah tersedia pada bot Crystal.
-        </p>
-      </div>
-    </section>
 
     <!-- ECOSYSTEM -->
     <section class="section ecosystem" id="ecosystem">
