@@ -9,9 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- Terhubung ke style dan script utama dari main page -->
-  <link rel="stylesheet" href="../style.css">
-  <script src="../script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -20,31 +19,22 @@
       <span>CRYSTAL<span class="brand-version">/ COMMANDS</span></span>
     </a>
     <nav class="nav-links" aria-label="Main navigation">
-      <a href="#overview" data-id="Overview" data-en="Overview">Overview</a>
-      <a class="active" href="#commands" data-id="Commands" data-en="Commands">Commands</a>
-      <a href="#footer" data-id="Developer" data-en="Developer">Developer</a>
+      <a href="#overview">Overview</a>
+      <a class="active" href="#commands">Commands</a>
+      <a href="#footer">Developer</a>
     </nav>
-    
-    <!-- Tombol Bahasa & CTA Connect -->
-    <div style="display: flex; align-items: center; gap: 15px;">
-      <div class="language" aria-label="Language selector">
-        <button id="idBtn" class="active" onclick="setLanguage('id')">ID</button>
-        <span>|</span>
-        <button id="enBtn" onclick="setLanguage('en')">EN</button>
-      </div>
-      <a class="nav-cta" href="https://wa.me/6281248030605" target="_blank" rel="noopener">Connect <span>↗</span></a>
-    </div>
+    <a class="nav-cta" href="https://wa.me/6281248030605" target="_blank" rel="noopener">Connect <span>↗</span></a>
   </header>
 
   <main>
     <section class="hero" id="overview">
       <div class="eyebrow"><span class="status-dot"></span> WHATSAPP AUTOMATION ECOSYSTEM</div>
-      <h1 data-id="Satu sistem.&lt;br&gt;&lt;span&gt;Utilitas tanpa batas.&lt;/span&gt;" data-en="One system.&lt;br&gt;&lt;span&gt;Infinite utility.&lt;/span&gt;">One system.<br><span>Infinite utility.</span></h1>
-      <p class="hero-copy" data-id="Ekosistem perintah terstruktur yang dibangun untuk kejelasan, kontrol, dan alur kerja yang lebih bersih." data-en="A structured command ecosystem built for clarity, control, and a cleaner workflow.">A structured command ecosystem built for clarity, control, and a cleaner workflow.</p>
+      <h1>One system.<br><span>Infinite utility.</span></h1>
+      <p class="hero-copy">A structured command ecosystem built for clarity, control, and a cleaner workflow.</p>
       <div class="hero-meta">
-        <div><span class="meta-label" data-id="VERSI SAAT INI" data-en="CURRENT VERSION">CURRENT VERSION</span><strong id="bot-version">2.0.1</strong></div>
-        <div><span class="meta-label" data-id="INDEKS PERINTAH" data-en="COMMAND INDEX">COMMAND INDEX</span><strong id="command-count">--</strong></div>
-        <div><span class="meta-label" data-id="DIKELOLA OLEH" data-en="MAINTAINED BY">MAINTAINED BY</span><strong>SkyGhostID</strong></div>
+        <div><span class="meta-label">CURRENT VERSION</span><strong id="bot-version">2.0.1</strong></div>
+        <div><span class="meta-label">COMMAND INDEX</span><strong id="command-count">--</strong></div>
+        <div><span class="meta-label">MAINTAINED BY</span><strong>SkyGhostID</strong></div>
       </div>
     </section>
 
@@ -52,8 +42,8 @@
       <div class="section-heading">
         <div>
           <div class="eyebrow">DOCUMENTATION / INDEX</div>
-          <h2 data-id="Pusat &lt;span&gt;Perintah&lt;/span&gt;" data-en="Command &lt;span&gt;Center&lt;/span&gt;">Command <span>Center</span></h2>
-          <p data-id="Jelajahi pustaka perintah Crystal." data-en="Explore the Crystal command library.">Explore the Crystal command library.</p>
+          <h2>Command <span>Center</span></h2>
+          <p>Explore the Crystal command library.</p>
         </div>
         <div class="index-note"><span class="index-square"></span> LIVE JSON INDEX</div>
       </div>
@@ -61,27 +51,64 @@
       <div class="toolbar">
         <label class="search-box">
           <span class="search-icon" aria-hidden="true">⌕</span>
-          <input id="command-search" type="search" placeholder="Cari command, tipe, atau tag..." data-placeholder-id="Cari command, tipe, atau tag..." data-placeholder-en="Search command, type, or tag..." autocomplete="off">
+          <input id="command-search" type="search" placeholder="Search command, type, or tag..." autocomplete="off">
           <kbd>/</kbd>
         </label>
-        <div class="toolbar-meta"><span id="visible-count">0</span> <span data-id="HASIL" data-en="RESULTS">RESULTS</span></div>
+        <div class="toolbar-meta"><span id="visible-count">0</span> RESULTS</div>
       </div>
 
       <div class="filter-row" id="category-filters" aria-label="Filter by category">
-        <button class="filter-chip selected" data-category="all" type="button" data-id="Semua command" data-en="All commands">All commands</button>
+        <button class="filter-chip selected" data-category="all" type="button">All commands</button>
       </div>
 
       <div class="catalog-state" id="catalog-state" role="status" aria-live="polite">
-        <span class="loader"></span> <span data-id="Memuat indeks perintah..." data-en="Loading command index...">Loading command index...</span>
+        <span class="loader"></span> Loading command index...
       </div>
       <section class="command-list" id="command-grid" aria-label="Command list"></section>
 
       <nav class="pagination" id="pagination" aria-label="Command pages" hidden>
-        <button class="page-button" id="prev-page" type="button" disabled data-id="← Sebelumnya" data-en="← Previous">← Previous</button>
+        <button class="page-button" id="prev-page" type="button" disabled>← Previous</button>
         <span class="page-indicator" id="page-indicator" aria-live="polite">Page 1 of 1</span>
-        <button class="page-button" id="next-page" type="button" disabled data-id="Berikutnya →" data-en="Next →">Next →</button>
+        <button class="page-button" id="next-page" type="button" disabled>Next →</button>
       </nav>
       <div class="empty-state" id="empty-state" hidden>
         <span class="empty-symbol">⌕</span>
-        <strong data-id="Command tidak ditemukan" data-en="No command found">No command found</strong>
-        <p data-id="Coba kata kunci
+        <strong>No command found</strong>
+        <p>Try another keyword or category.</p>
+      </div>
+      <p class="catalog-footnote">Command availability and access are subject to the bot's current configuration.</p>
+    </section>
+
+    <section class="developer-strip" id="footer">
+      <div>
+        <div class="eyebrow">BUILT WITH INTENTION</div>
+        <h2>Designed by <span>SkyGhostID.</span></h2>
+        <p>Minimal interface. Structured ecosystem. Crystal.</p>
+      </div>
+      <a href="https://hostinginzel.my.id" target="_blank" rel="noopener" class="outline-link">Visit developer ↗</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 SkyGhostID</span>
+    <span>CRYSTAL / COMMAND CENTER</span>
+  </footer>
+
+  <template id="command-row-template">
+    <article class="command-row">
+      <div class="command-main">
+        <button class="expand-button" type="button" aria-expanded="false">
+          <span class="expand-chevron" aria-hidden="true">›</span>
+          <span class="command-identity">
+            <span class="command-name"></span>
+            <span class="command-category"></span>
+          </span>
+          <span class="command-status"></span>
+        </button>
+        <button class="copy-button" type="button" aria-label="Copy command" title="Copy command">COPY</button>
+      </div>
+      <div class="command-detail" hidden></div>
+    </article>
+  </template>
+</body>
+</html>
