@@ -1,304 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080d14">
-  <title>Crystal 2 | Intelligent Digital Experience</title>
-  <meta name="description" content="Crystal 2, your intelligent digital companion. Explore commands, services, and connect through WhatsApp.">
-  <link rel="icon" href="favicon.ico">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080f1d">
+  <meta name="description" content="Crystal 2.0.1 command center by SkyGhostID.">
+  <title>Crystal 2.0.1 | Command Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- NAVIGATION -->
-  <header class="navbar">
-    <a href="#home" class="brand">
-      <span class="brand-icon">✦</span>
-      Crystal<span class="blue">2</span>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Crystal home">
+      <span class="brand-mark">C</span>
+      <span>CRYSTAL<span class="brand-version">/ 2.0.1</span></span>
     </a>
-
-    <nav class="nav-links" id="navLinks">
-      <a href="#home" data-id="Beranda" data-en="Home">Beranda</a>
-      <a href="#about" data-id="Tentang" data-en="About">Tentang</a>
-      <a href="#features" data-id="Fitur" data-en="Features">Fitur</a>
-      <a href="#services" data-id="Layanan" data-en="Services">Layanan</a>
-      <a href="#commands" data-id="Commands" data-en="Commands">Commands</a>
-      <a href="#faq" data-id="FAQ" data-en="FAQ">FAQ</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#overview">Overview</a>
+      <a class="active" href="#commands">Commands</a>
+      <a href="#footer">Developer</a>
     </nav>
-
-    <div class="nav-actions">
-      <div class="language" aria-label="Language selector">
-        <button id="idBtn" class="active" onclick="setLanguage('id')">ID</button>
-        <span>|</span>
-        <button id="enBtn" onclick="setLanguage('en')">EN</button>
-      </div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-    </div>
+    <a class="nav-cta" href="https://wa.me/6281248030605" target="_blank" rel="noopener">Connect <span>↗</span></a>
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero section" id="home">
-      <div class="hero-content">
-        <div class="eyebrow"><span class="pulse"></span>DIGITAL EXPERIENCE</div>
-        <h1>Meet <span class="blue">Crystal 2.</span><br>
-          <span data-id="Lebih dekat dengan masa depan." data-en="Closer to the future.">Lebih dekat dengan masa depan.</span>
-        </h1>
-        <p class="hero-description"
-           data-id="Asisten digital yang dirancang untuk menghadirkan pengalaman komunikasi dan teknologi yang lebih praktis."
-           data-en="A digital assistant designed to make communication and technology more accessible.">
-          Asisten digital yang dirancang untuk menghadirkan pengalaman komunikasi dan teknologi yang lebih praktis.
-        </p>
-        <div class="hero-actions">
-          <a href="https://wa.me/6281248030605" class="btn btn-primary" target="_blank" rel="noopener noreferrer"
-             data-id="Mulai Terhubung ↗" data-en="Get Connected ↗">Mulai Terhubung ↗</a>
-          <a href="#commands" class="btn btn-secondary" data-id="Lihat Commands" data-en="Explore Commands">Lihat Commands</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="crystal-orb"><span>✦</span></div>
-        <div class="orb-label"><strong>CRYSTAL 2</strong><span>INTELLIGENT EXPERIENCE</span></div>
+    <section class="hero" id="overview">
+      <div class="eyebrow"><span class="status-dot"></span> WHATSAPP AUTOMATION ECOSYSTEM</div>
+      <h1>One system.<br><span>Infinite utility.</span></h1>
+      <p class="hero-copy">A structured command ecosystem built for clarity, control, and a cleaner workflow.</p>
+      <div class="hero-meta">
+        <div><span class="meta-label">CURRENT VERSION</span><strong id="bot-version">2.0.1</strong></div>
+        <div><span class="meta-label">COMMAND INDEX</span><strong id="command-count">--</strong></div>
+        <div><span class="meta-label">MAINTAINED BY</span><strong>SkyGhostID</strong></div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
+    <section class="command-section" id="commands">
       <div class="section-heading">
-        <span class="eyebrow">01 / ABOUT</span>
-        <h2 data-id="Mengenal Crystal 2" data-en="About Crystal 2">Mengenal Crystal 2</h2>
-        <p data-id="Crystal 2 adalah proyek asisten digital yang dikembangkan untuk menghubungkan komunikasi, teknologi, dan pengalaman pengguna dalam satu ekosistem."
-           data-en="Crystal 2 is a digital assistant project designed to connect communication, technology, and user experience in one ecosystem.">
-          Crystal 2 adalah proyek asisten digital yang dikembangkan untuk menghubungkan komunikasi, teknologi, dan pengalaman pengguna dalam satu ekosistem.
-        </p>
-      </div>
-      <div class="about-grid">
-        <article class="info-card"><span class="card-icon">✧</span><h3 data-id="Sederhana" data-en="Simple">Sederhana</h3>
-          <p data-id="Pengalaman penggunaan yang mudah dipahami." data-en="An experience that is easy to understand.">Pengalaman penggunaan yang mudah dipahami.</p></article>
-        <article class="info-card"><span class="card-icon">◈</span><h3 data-id="Terintegrasi" data-en="Connected">Terintegrasi</h3>
-          <p data-id="Dirancang untuk terhubung dengan berbagai layanan digital." data-en="Designed to connect with different digital services.">Dirancang untuk terhubung dengan berbagai layanan digital.</p></article>
-        <article class="info-card"><span class="card-icon">⌘</span><h3 data-id="Berkembang" data-en="Evolving">Berkembang</h3>
-          <p data-id="Dibangun secara bertahap dengan ruang untuk inovasi." data-en="Built progressively with room for innovation.">Dibangun secara bertahap dengan ruang untuk inovasi.</p></article>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="section" id="features">
-      <div class="section-heading">
-        <span class="eyebrow">02 / FEATURES</span>
-        <h2 data-id="Apa yang ditawarkan?" data-en="What does it offer?">Apa yang ditawarkan?</h2>
-        <p data-id="Beberapa area pengembangan utama dalam ekosistem Crystal 2."
-           data-en="The main development areas of the Crystal 2 ecosystem.">Beberapa area pengembangan utama dalam ekosistem Crystal 2.</p>
-      </div>
-      <div class="feature-grid">
-        <article class="feature-card"><span class="card-icon">✉</span><h3>WhatsApp Integration</h3>
-          <p data-id="Akses layanan Crystal melalui WhatsApp." data-en="Access Crystal services through WhatsApp.">Akses layanan Crystal melalui WhatsApp.</p><span class="tag">COMMUNICATION</span></article>
-        <article class="feature-card"><span class="card-icon">✧</span><h3>AI Experience</h3>
-          <p data-id="Pengembangan pengalaman asisten berbasis kecerdasan buatan."
-             data-en="Development of AI-powered assistant experiences.">Pengembangan pengalaman asisten berbasis kecerdasan buatan.</p><span class="tag">INTELLIGENCE</span></article>
-        <article class="feature-card"><span class="card-icon">⌘</span><h3>API Ecosystem</h3>
-          <p data-id="Ruang pengembangan integrasi untuk developer." data-en="Integration development opportunities for developers.">Ruang pengembangan integrasi untuk developer.</p><span class="tag">DEVELOPMENT</span></article>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="section" id="services">
-      <div class="section-heading"><span class="eyebrow">03 / SERVICES</span>
-        <h2 data-id="Jelajahi layanan" data-en="Explore services">Jelajahi layanan</h2></div>
-      <div class="service-list">
-        <article class="service-item"><div><span class="service-number">01</span><h3>Crystal WhatsApp</h3>
-          <p data-id="Hubungi Crystal melalui WhatsApp." data-en="Connect with Crystal through WhatsApp.">Hubungi Crystal melalui WhatsApp.</p></div>
-          <a href="https://wa.me/6281248030605" target="_blank" rel="noopener noreferrer" class="service-link" aria-label="Open WhatsApp">↗</a></article>
-        <article class="service-item"><div><span class="service-number">02</span><h3>Crystal Dashboard</h3>
-          <p data-id="Pusat pengelolaan layanan. Dalam pengembangan." data-en="A service management center. In development.">Pusat pengelolaan layanan. Dalam pengembangan.</p></div><span class="coming-soon">COMING SOON</span></article>
-        <article class="service-item"><div><span class="service-number">03</span><h3>Crystal API</h3>
-          <p data-id="Integrasi teknologi untuk developer. Dalam pengembangan." data-en="Technology integrations for developers. In development.">Integrasi teknologi untuk developer. Dalam pengembangan.</p></div><span class="coming-soon">COMING SOON</span></article>
-      </div>
-    </section>
-
-    <!-- COMMAND CENTER -->
-    <section class="section commands-section" id="commands">
-      <div class="section-heading">
-        <span class="eyebrow">04 / COMMAND CENTER</span>
-        <h2 data-id="Kenali perintah Crystal." data-en="Explore Crystal commands.">Kenali perintah Crystal.</h2>
-        <p data-id="Sebelum integrasi AI tersedia, Crystal menggunakan command khusus. Ketik perintah dengan awalan tanda seru (!)."
-           data-en="Before AI integration is available, Crystal uses dedicated commands. Start each command with an exclamation mark (!).">
-          Sebelum integrasi AI tersedia, Crystal menggunakan command khusus. Ketik perintah dengan awalan tanda seru (!).
-        </p>
-      </div>
-
-      <div class="command-intro">
         <div>
-          <span class="command-kicker">CRYSTAL COMMAND LINE</span>
-          <h3 data-id="Satu awalan. Banyak fungsi." data-en="One prefix. Multiple functions.">Satu awalan. Banyak fungsi.</h3>
-          <p data-id="Gunakan !menu untuk membuka daftar perintah utama, atau !menu all untuk melihat seluruh command."
-             data-en="Use !menu to open the main command list, or !menu all to view every command.">
-            Gunakan !menu untuk membuka daftar perintah utama, atau !menu all untuk melihat seluruh command.
-          </p>
+          <div class="eyebrow">DOCUMENTATION / INDEX</div>
+          <h2>Command <span>Center</span></h2>
+          <p>Explore the Crystal command library.</p>
         </div>
-        <button class="copy-command" type="button" data-copy="!menu"><code>!menu</code><span data-id="Salin" data-en="Copy">Salin</span></button>
+        <div class="index-note"><span class="index-square"></span> LIVE JSON INDEX</div>
       </div>
 
-      <div class="command-toolbar">
-        <div class="command-filters" role="group" aria-label="Filter command category">
-          <button class="filter-btn active" type="button" data-filter="all" data-id="Semua" data-en="All">Semua</button>
-          <button class="filter-btn" type="button" data-filter="general">General</button>
-          <button class="filter-btn" type="button" data-filter="profile">Profile</button>
-          <button class="filter-btn" type="button" data-filter="image">Image</button>
-          <button class="filter-btn" type="button" data-filter="developer">Developer</button>
-        </div>
-        <label class="command-search">
-          <span class="sr-only">Search commands</span>
-          <input id="commandSearch" type="search" placeholder="Cari command..." data-placeholder-id="Cari command..." data-placeholder-en="Search commands..." autocomplete="off">
+      <div class="toolbar">
+        <label class="search-box">
+          <span class="search-icon">⌕</span>
+          <input id="command-search" type="search" placeholder="Search command, type, or tag..." autocomplete="off">
+          <kbd>/</kbd>
         </label>
+        <div class="toolbar-meta"><span id="visible-count">0</span> RESULTS</div>
       </div>
 
-      <div class="command-grid" id="commandGrid">
-        <article class="command-card" data-category="general" data-search="menu all help ping status version about">
-          <div class="command-card-top"><span class="command-category">GENERAL</span><span class="command-symbol">⌘</span></div>
-          <h3>Menu & System</h3>
-          <p data-id="Navigasi, bantuan, dan informasi sistem Crystal." data-en="Navigation, help, and Crystal system information.">Navigasi, bantuan, dan informasi sistem Crystal.</p>
-          <div class="command-list">
-            <div class="command-line"><code>!menu</code><button class="copy-command" type="button" data-copy="!menu" aria-label="Copy !menu">Copy</button></div>
-            <div class="command-line"><code>!menu all</code><button class="copy-command" type="button" data-copy="!menu all" aria-label="Copy !menu all">Copy</button></div>
-            <div class="command-line"><code>!help</code><button class="copy-command" type="button" data-copy="!help" aria-label="Copy !help">Copy</button></div>
-            <div class="command-line"><code>!ping</code><button class="copy-command" type="button" data-copy="!ping" aria-label="Copy !ping">Copy</button></div>
-            <div class="command-line"><code>!status</code><button class="copy-command" type="button" data-copy="!status" aria-label="Copy !status">Copy</button></div>
-            <div class="command-line"><code>!version</code><button class="copy-command" type="button" data-copy="!version" aria-label="Copy !version">Copy</button></div>
-            <div class="command-line"><code>!about</code><button class="copy-command" type="button" data-copy="!about" aria-label="Copy !about">Copy</button></div>
-          </div>
-        </article>
-
-        <article class="command-card" data-category="profile" data-search="profile register name tier user vip vvip info edit">
-          <div class="command-card-top"><span class="command-category">PROFILE SYSTEM</span><span class="command-symbol">◈</span></div>
-          <h3>Profile & Membership</h3>
-          <p data-id="Registrasi akun dan pengelolaan informasi keanggotaan." data-en="Account registration and membership information management.">Registrasi akun dan pengelolaan informasi keanggotaan.</p>
-          <div class="command-list">
-            <div class="command-line"><code>!profile</code><button class="copy-command" type="button" data-copy="!profile">Copy</button></div>
-            <div class="command-line"><code>!profile info</code><button class="copy-command" type="button" data-copy="!profile info">Copy</button></div>
-            <div class="command-line"><code>!profile register &lt;name&gt; -tier user</code><button class="copy-command" type="button" data-copy="!profile register Your Name -tier user">Copy</button></div>
-            <div class="command-line"><code>!profile register &lt;name&gt; -tier vip</code><button class="copy-command" type="button" data-copy="!profile register Your Name -tier vip">Copy</button></div>
-            <div class="command-line"><code>!profile register &lt;name&gt; -tier vvip</code><button class="copy-command" type="button" data-copy="!profile register Your Name -tier vvip">Copy</button></div>
-            <div class="command-line"><code>!profile edit</code><button class="copy-command" type="button" data-copy="!profile edit">Copy</button></div>
-          </div>
-          <div class="approval-note">
-            <strong data-id="Validasi keanggotaan" data-en="Membership review">Validasi keanggotaan</strong>
-            <p data-id="Pengajuan VIP/VVIP berstatus pending sampai ditinjau dan disetujui Owner. Persetujuan otomatis dapat diterapkan setelah API dan sistem pembayaran resmi tersedia."
-               data-en="VIP/VVIP applications remain pending until reviewed and approved by the Owner. Automatic approval may be introduced once the official API and payment system are available.">
-              Pengajuan VIP/VVIP berstatus pending sampai ditinjau dan disetujui Owner. Persetujuan otomatis dapat diterapkan setelah API dan sistem pembayaran resmi tersedia.
-            </p>
-            <div class="status-pills"><span>PENDING</span><span>APPROVED</span><span>REJECTED</span></div>
-          </div>
-        </article>
-
-        <article class="command-card" data-category="image" data-search="image help compress convert resize">
-          <div class="command-card-top"><span class="command-category">IMAGE TOOLS</span><span class="command-symbol">▧</span></div>
-          <h3>Image Utilities</h3>
-          <p data-id="Perintah untuk bantuan dan pemrosesan gambar." data-en="Commands for image help and image processing.">Perintah untuk bantuan dan pemrosesan gambar.</p>
-          <div class="command-list">
-            <div class="command-line"><code>!image</code><button class="copy-command" type="button" data-copy="!image">Copy</button></div>
-            <div class="command-line"><code>!image help</code><button class="copy-command" type="button" data-copy="!image help">Copy</button></div>
-            <div class="command-line"><code>!image compress</code><button class="copy-command" type="button" data-copy="!image compress">Copy</button></div>
-            <div class="command-line"><code>!image convert</code><button class="copy-command" type="button" data-copy="!image convert">Copy</button></div>
-            <div class="command-line"><code>!image resize</code><button class="copy-command" type="button" data-copy="!image resize">Copy</button></div>
-          </div>
-          <span class="command-footnote" data-id="Ketersediaan fitur mengikuti versi bot yang aktif." data-en="Feature availability depends on the active bot version.">Ketersediaan fitur mengikuti versi bot yang aktif.</span>
-        </article>
-
-        <article class="command-card" data-category="developer" data-search="skyghostid dev hub info status">
-          <div class="command-card-top"><span class="command-category">DEVELOPER HUB</span><span class="command-symbol">⌘</span></div>
-          <h3>SkyGhostID</h3>
-          <p data-id="Informasi developer dan ekosistem di balik Crystal 2." data-en="Developer and ecosystem information behind Crystal 2.">Informasi developer dan ekosistem di balik Crystal 2.</p>
-          <div class="command-list">
-            <div class="command-line"><code>!skyghostid</code><button class="copy-command" type="button" data-copy="!skyghostid">Copy</button></div>
-            <div class="command-line"><code>!skyghostid info</code><button class="copy-command" type="button" data-copy="!skyghostid info">Copy</button></div>
-            <div class="command-line"><code>!skyghostid status</code><button class="copy-command" type="button" data-copy="!skyghostid status">Copy</button></div>
-          </div>
-          <a class="text-link" href="https://hostinginzel.my.id" target="_blank" rel="noopener noreferrer">SkyGhostID website ↗</a>
-        </article>
+      <div class="filter-row" id="category-filters" aria-label="Filter by category">
+        <button class="filter-chip selected" data-category="all" type="button">All commands</button>
       </div>
-      <p class="no-results" id="noCommands" hidden data-id="Command tidak ditemukan." data-en="No commands found.">Command tidak ditemukan.</p>
-      <div class="command-disclaimer">
-        <span class="pulse"></span>
-        <p data-id="Catatan: daftar ini adalah katalog command. Beberapa fitur masih dalam pengembangan dan hanya dapat digunakan jika sudah tersedia pada bot Crystal."
-           data-en="Note: this is a command catalog. Some features are still in development and can only be used when available in the Crystal bot.">
-          Catatan: daftar ini adalah katalog command. Beberapa fitur masih dalam pengembangan dan hanya dapat digunakan jika sudah tersedia pada bot Crystal.
-        </p>
+
+      <div class="catalog-state" id="catalog-state" role="status" aria-live="polite">
+        <span class="loader"></span> Loading command index...
       </div>
+      <div class="command-grid" id="command-grid"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <span class="empty-symbol">⌕</span>
+        <strong>No command found</strong>
+        <p>Try another keyword or category.</p>
+      </div>
+      <p class="catalog-footnote">Command availability and access are subject to the bot's current configuration.</p>
     </section>
 
-    <!-- ECOSYSTEM -->
-    <section class="section ecosystem" id="ecosystem">
-      <div class="section-heading">
-        <span class="eyebrow">05 / ECOSYSTEM</span>
-        <h2 data-id="Satu ekosistem, banyak kemungkinan." data-en="One ecosystem, many possibilities.">Satu ekosistem, banyak kemungkinan.</h2>
-        <p data-id="Crystal 2 dikembangkan dengan visi untuk menghadirkan berbagai layanan digital yang saling terhubung."
-           data-en="Crystal 2 is being developed with a vision of bringing connected digital services together.">
-          Crystal 2 dikembangkan dengan visi untuk menghadirkan berbagai layanan digital yang saling terhubung.
-        </p>
+    <section class="developer-strip" id="footer">
+      <div>
+        <div class="eyebrow">BUILT WITH INTENTION</div>
+        <h2>Designed by <span>SkyGhostID.</span></h2>
+        <p>Minimal interface. Structured ecosystem. Crystal.</p>
       </div>
-      <div class="ecosystem-panel">
-        <div class="eco-center"><span>✦</span><strong>CRYSTAL 2</strong><small>CORE PROJECT</small></div>
-        <div class="eco-node node-one">WhatsApp</div><div class="eco-node node-two">AI</div>
-        <div class="eco-node node-three">Dashboard</div><div class="eco-node node-four">API</div>
-      </div>
-    </section>
-
-    <!-- DEVELOPER -->
-    <section class="section developer" id="developer">
-      <div class="developer-content">
-        <span class="eyebrow">06 / DEVELOPERS</span>
-        <h2 data-id="Dibangun untuk terus berkembang." data-en="Built to keep evolving.">Dibangun untuk terus berkembang.</h2>
-        <p data-id="Dokumentasi, API, dan tools developer merupakan bagian dari rencana pengembangan Crystal 2."
-           data-en="Documentation, APIs, and developer tools are part of the Crystal 2 development roadmap.">
-          Dokumentasi, API, dan tools developer merupakan bagian dari rencana pengembangan Crystal 2.
-        </p>
-        <span class="coming-soon">DEVELOPER PORTAL · COMING SOON</span>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section" id="faq">
-      <div class="section-heading"><span class="eyebrow">07 / FAQ</span>
-        <h2 data-id="Pertanyaan umum" data-en="Frequently asked questions">Pertanyaan umum</h2></div>
-      <div class="faq-list">
-        <details class="faq-item"><summary data-id="Apa itu Crystal 2?" data-en="What is Crystal 2?">Apa itu Crystal 2?</summary>
-          <p data-id="Crystal 2 adalah proyek asisten digital dan ekosistem teknologi yang sedang dikembangkan."
-             data-en="Crystal 2 is a digital assistant and technology ecosystem project currently in development.">Crystal 2 adalah proyek asisten digital dan ekosistem teknologi yang sedang dikembangkan.</p></details>
-        <details class="faq-item"><summary data-id="Bagaimana cara menghubungi Crystal?" data-en="How do I contact Crystal?">Bagaimana cara menghubungi Crystal?</summary>
-          <p data-id="Kamu dapat menggunakan tombol WhatsApp pada halaman ini atau menghubungi nomor yang tersedia."
-             data-en="You can use the WhatsApp button on this page or contact the number provided.">Kamu dapat menggunakan tombol WhatsApp pada halaman ini atau menghubungi nomor yang tersedia.</p></details>
-        <details class="faq-item"><summary data-id="Apakah Crystal API sudah tersedia?" data-en="Is Crystal API available yet?">Apakah Crystal API sudah tersedia?</summary>
-          <p data-id="Belum. API dan developer portal masih menjadi bagian dari roadmap pengembangan."
-             data-en="Not yet. The API and developer portal are still part of the development roadmap.">Belum. API dan developer portal masih menjadi bagian dari roadmap pengembangan.</p></details>
-        <details class="faq-item"><summary data-id="Bagaimana pengajuan tier VIP/VVIP diproses?" data-en="How are VIP/VVIP tier applications processed?">Bagaimana pengajuan tier VIP/VVIP diproses?</summary>
-          <p data-id="Pengajuan akan menunggu tinjauan Owner. Persetujuan otomatis baru dapat digunakan setelah API dan ekosistem pembayaran tersedia dan terintegrasi."
-             data-en="Applications wait for Owner review. Automatic approval can only be used once the API and payment ecosystem are available and integrated.">
-            Pengajuan akan menunggu tinjauan Owner. Persetujuan otomatis baru dapat digunakan setelah API dan ekosistem pembayaran tersedia dan terintegrasi.</p></details>
-        <details class="faq-item"><summary data-id="Apakah website ini mendukung bahasa Inggris?" data-en="Does this website support English?">Apakah website ini mendukung bahasa Inggris?</summary>
-          <p data-id="Ya. Gunakan tombol ID dan EN di bagian navigasi untuk mengganti bahasa."
-             data-en="Yes. Use the ID and EN buttons in the navigation to switch languages.">Ya. Gunakan tombol ID dan EN di bagian navigasi untuk mengganti bahasa.</p></details>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section contact" id="contact">
-      <span class="eyebrow">08 / CONTACT</span>
-      <h2 data-id="Mari terhubung." data-en="Let's connect.">Mari terhubung.</h2>
-      <p data-id="Punya pertanyaan atau ingin mengenal Crystal lebih jauh?" data-en="Have questions or want to learn more about Crystal?">Punya pertanyaan atau ingin mengenal Crystal lebih jauh?</p>
-      <a href="https://wa.me/6281248030605" class="btn btn-primary" target="_blank" rel="noopener noreferrer"
-         data-id="Hubungi melalui WhatsApp ↗" data-en="Contact via WhatsApp ↗">Hubungi melalui WhatsApp ↗</a>
-      <div class="contact-number"><small data-id="NOMOR WHATSAPP" data-en="WHATSAPP NUMBER">NOMOR WHATSAPP</small><strong>+62 812-4803-0605</strong></div>
+      <a href="https://hostinginzel.my.id" target="_blank" rel="noopener" class="outline-link">Visit developer ↗</a>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
-    <a href="#home" class="brand"><span class="brand-icon">✦</span>Crystal<span class="blue">2</span></a>
-    <p>© 2026 <a href="https://hostinginzel.my.id" target="_blank" rel="noopener noreferrer">SkyGhostID</a></p>
-    <span data-id="Dibuat untuk masa depan." data-en="Built for the future.">Dibuat untuk masa depan.</span>
+    <span>© 2026 SkyGhostID</span>
+    <span>CRYSTAL / COMMAND CENTER</span>
   </footer>
 
-  <div class="toast" id="copyToast" role="status" aria-live="polite"></div>
-  <script src="script.js"></script>
+  <template id="command-card-template">
+    <article class="command-card">
+      <div class="card-topline">
+        <span class="command-category"></span>
+        <span class="command-status"></span>
+      </div>
+      <div class="command-name-row">
+        <h3 class="command-name"></h3>
+        <button class="copy-button" type="button" aria-label="Copy command" title="Copy command">COPY</button>
+      </div>
+      <div class="command-meta"></div>
+      <div class="command-description" hidden></div>
+      <div class="command-aliases" hidden></div>
+      <div class="command-tags" hidden></div>
+      <div class="command-date" hidden></div>
+    </article>
+  </template>
 </body>
 </html>
