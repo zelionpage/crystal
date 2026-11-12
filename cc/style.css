@@ -1,4 +1,4 @@
- :root {
+:root {
   color-scheme: dark;
   --bg: #080f1d;
   --panel: rgba(14, 25, 43, .78);
@@ -17,10 +17,14 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; min-height: 100vh; background: var(--bg); color: var(--text); overflow-x: hidden; }
 a { color: inherit; text-decoration: none; }
-.ambient { position: fixed; width: 420px; height: 420px; border-radius: 50%; filter: blur(130px); opacity: .12; pointer-events: none; z-index: -1; }
+
+/* Lightweight ambient accents: no blur filters. */
+.ambient { position: fixed; width: 420px; height: 420px; border-radius: 50%; opacity: .07; pointer-events: none; z-index: -1; }
 .ambient-one { top: -220px; left: 12%; background: #238dbb; }
 .ambient-two { top: 560px; right: -260px; background: #3157b9; }
-.topbar { height: 78px; padding: 0 max(6vw, 24px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); background: rgba(8,15,29,.76); backdrop-filter: blur(18px); position: sticky; top: 0; z-index: 10; }
+
+/* Sticky header uses a solid background instead of backdrop-filter. */
+.topbar { height: 78px; padding: 0 max(6vw, 24px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); background: #080f1d; position: sticky; top: 0; z-index: 10; }
 .brand { display: flex; align-items: center; gap: 11px; font-size: 13px; font-weight: 800; letter-spacing: .16em; }
 .brand-mark { width: 29px; height: 29px; display: grid; place-items: center; border: 1px solid rgba(121,217,245,.5); color: var(--cyan); border-radius: 9px; font-family: "DM Mono", monospace; font-size: 16px; }
 .brand-version { color: #74869d; font: 10px "DM Mono", monospace; letter-spacing: .04em; margin-left: 5px; }
@@ -106,43 +110,4 @@ kbd { border: 1px solid var(--line); border-radius: 4px; padding: 3px 7px; color
   .command-grid { grid-template-columns: 1fr; }
   .developer-strip { align-items: flex-start; flex-direction: column; padding: 23px; }
   .footer { gap: 12px; font-size: 8px; }
-}
-
-
-/* Pagination: keep the command catalog light by rendering one page at a time. */
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  margin: 30px 0 8px;
-}
-.page-button {
-  min-height: 38px;
-  padding: 0 14px;
-  border: 1px solid rgba(121,217,245,.28);
-  border-radius: 6px;
-  background: rgba(14,25,43,.72);
-  color: var(--cyan);
-  font: 10px "DM Mono", monospace;
-  cursor: pointer;
-  transition: .2s;
-}
-.page-button:hover:not(:disabled) {
-  border-color: var(--cyan);
-  background: var(--cyan-soft);
-}
-.page-button:disabled {
-  opacity: .35;
-  cursor: not-allowed;
-}
-.page-indicator {
-  min-width: 90px;
-  color: var(--muted);
-  font: 10px "DM Mono", monospace;
-  text-align: center;
-}
-@media (max-width: 420px) {
-  .pagination { gap: 10px; }
-  .page-button { padding: 0 10px; font-size: 9px; }
 }
