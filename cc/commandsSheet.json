@@ -41,7 +41,7 @@
       "category": "system",
       "access": "user",
       "status": "stable",
-      "releaseDate": "2026-11-13",
+      "releaseDate": "2026-11-9",
       "version": "2.0.1",
       "aliases": [
         "!latency"
@@ -50,7 +50,7 @@
         "system",
         "diagnostic"
       ],
-      "description": "Example record with all fields populated.",
+      "description": "Just latency / response test.",
       "example": true
     },
     {
