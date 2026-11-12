@@ -1,0 +1,785 @@
+{
+  "schemaVersion": "1.0.0",
+  "bot": "Crystal",
+  "botVersion": "2.0.1",
+  "updatedAt": null,
+  "defaults": {
+    "dateFormat": "YYYY-MM-DD",
+    "emptyValueBehavior": "hide",
+    "unknownValueBehavior": "hide",
+    "fallback": "—",
+    "accessLevels": [
+      "user",
+      "vip",
+      "vvip",
+      "owner"
+    ],
+    "statuses": [
+      "stable",
+      "maintenance",
+      "undocumented",
+      "coming-soon"
+    ],
+    "categories": [
+      "system",
+      "productivity",
+      "developer",
+      "media",
+      "image",
+      "tools",
+      "security",
+      "admin",
+      "premium",
+      "undocumented"
+    ]
+  },
+  "commands": [
+    {
+      "id": "ping",
+      "name": "!ping",
+      "type": "utility",
+      "category": "system",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": "2026-11-13",
+      "version": "2.0.1",
+      "aliases": [
+        "!latency"
+      ],
+      "tags": [
+        "system",
+        "diagnostic"
+      ],
+      "description": "Example record with all fields populated.",
+      "example": true
+    },
+    {
+      "id": "info",
+      "name": "!info",
+      "type": "utility",
+      "category": "system",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "help",
+      "name": "!help",
+      "type": "utility",
+      "category": "system",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "menu",
+      "name": "!menu",
+      "type": "utility",
+      "category": "system",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "credit",
+      "name": "!credit",
+      "type": "utility",
+      "category": "system",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "status",
+      "name": "!status",
+      "type": "utility",
+      "category": "system",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "monitor",
+      "name": "!monitor",
+      "type": "utility",
+      "category": "system",
+      "access": "owner",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "owner"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "profile",
+      "name": "!profile",
+      "type": "account",
+      "category": "system",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "audit",
+      "name": "!audit",
+      "type": "security",
+      "category": "security",
+      "access": "owner",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "owner",
+        "security"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "blacklist",
+      "name": "!blacklist",
+      "type": "security",
+      "category": "security",
+      "access": "owner",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "owner",
+        "security"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "note",
+      "name": "!note",
+      "type": "productivity",
+      "category": "productivity",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "remind",
+      "name": "!remind",
+      "type": "productivity",
+      "category": "productivity",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "skyghostid",
+      "name": "!skyghostid",
+      "type": "developer",
+      "category": "developer",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "developer"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "s-latestup",
+      "name": "!s latestUp",
+      "type": "developer",
+      "category": "developer",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "developer"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "s-projectshow",
+      "name": "!s projectShow",
+      "type": "developer",
+      "category": "developer",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "developer"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "s-apidir",
+      "name": "!s APIdir",
+      "type": "developer",
+      "category": "developer",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "developer"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "s-servicestatus",
+      "name": "!s serviceStatus",
+      "type": "developer",
+      "category": "developer",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "developer"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "s-officiallinks",
+      "name": "!s officialLinks",
+      "type": "developer",
+      "category": "developer",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "developer"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "s-devprofile",
+      "name": "!s devProfile",
+      "type": "developer",
+      "category": "developer",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "developer"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "ytmp3",
+      "name": "!ytmp3",
+      "type": "media",
+      "category": "media",
+      "access": "user",
+      "status": "maintenance",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "maintenance"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "ytmp4",
+      "name": "!ytmp4",
+      "type": "media",
+      "category": "media",
+      "access": "user",
+      "status": "maintenance",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "maintenance"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "tiktok",
+      "name": "!tiktok",
+      "type": "media",
+      "category": "media",
+      "access": "user",
+      "status": "maintenance",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "maintenance"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "insta",
+      "name": "!insta",
+      "type": "media",
+      "category": "media",
+      "access": "user",
+      "status": "maintenance",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "maintenance"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "facebook",
+      "name": "!facebook",
+      "type": "media",
+      "category": "media",
+      "access": "user",
+      "status": "maintenance",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "maintenance"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "twitter",
+      "name": "!twitter",
+      "type": "media",
+      "category": "media",
+      "access": "user",
+      "status": "maintenance",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "maintenance"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "image",
+      "name": "!image",
+      "type": "media",
+      "category": "image",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "gif",
+      "name": "!gif",
+      "type": "media",
+      "category": "image",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "sticker",
+      "name": "!sticker",
+      "type": "media",
+      "category": "image",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "lottie",
+      "name": "!lottie",
+      "type": "media",
+      "category": "image",
+      "access": "owner",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "owner"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "studio",
+      "name": "!studio",
+      "type": "media",
+      "category": "image",
+      "access": "owner",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "owner"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "scrape",
+      "name": "!scrape",
+      "type": "utility",
+      "category": "tools",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "qr",
+      "name": "!qr",
+      "type": "utility",
+      "category": "tools",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "translate",
+      "name": "!translate",
+      "type": "utility",
+      "category": "tools",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "approve",
+      "name": "!approve",
+      "type": "management",
+      "category": "admin",
+      "access": "owner",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "owner",
+        "approval"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "sentinel",
+      "name": "!sentinel",
+      "type": "security",
+      "category": "premium",
+      "access": "owner",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "owner",
+        "stable"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "sandbox",
+      "name": "!sandbox",
+      "type": "premium",
+      "category": "premium",
+      "access": "vvip",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "vvip"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "bridge",
+      "name": "!bridge",
+      "type": "premium",
+      "category": "premium",
+      "access": "vvip",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "vvip"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "vault",
+      "name": "!vault",
+      "type": "premium",
+      "category": "premium",
+      "access": "vvip",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "vvip"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "voice",
+      "name": "!voice",
+      "type": "premium",
+      "category": "premium",
+      "access": "vvip",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "vvip"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "analytics",
+      "name": "!analytics",
+      "type": "premium",
+      "category": "premium",
+      "access": "vvip",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "vvip"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "cron",
+      "name": "!cron",
+      "type": "premium",
+      "category": "premium",
+      "access": "vvip",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "vvip"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "aistudio",
+      "name": "!aistudio",
+      "type": "unknown",
+      "category": "undocumented",
+      "access": "user",
+      "status": "undocumented",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "needs-description"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "aistudiov",
+      "name": "!aistudiov",
+      "type": "unknown",
+      "category": "undocumented",
+      "access": "user",
+      "status": "undocumented",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "needs-description"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "backupgroup",
+      "name": "!backupgroup",
+      "type": "unknown",
+      "category": "undocumented",
+      "access": "user",
+      "status": "undocumented",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "needs-description"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "kill",
+      "name": "!kill",
+      "type": "unknown",
+      "category": "undocumented",
+      "access": "user",
+      "status": "undocumented",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "needs-description"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "shutdown",
+      "name": "!shutdown",
+      "type": "unknown",
+      "category": "undocumented",
+      "access": "user",
+      "status": "undocumented",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "needs-description"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "start",
+      "name": "!start",
+      "type": "unknown",
+      "category": "undocumented",
+      "access": "user",
+      "status": "undocumented",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "needs-description"
+      ],
+      "description": null,
+      "example": false
+    },
+    {
+      "id": "skyghost",
+      "name": "!skyghost",
+      "type": "unknown",
+      "category": "undocumented",
+      "access": "user",
+      "status": "undocumented",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "needs-description"
+      ],
+      "description": null,
+      "example": false
+    }
+  ]
+}

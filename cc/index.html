@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080f1d">
+  <meta name="description" content="Crystal 2.0.1 command center by SkyGhostID.">
+  <title>Crystal 2.0.1 | Command Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Crystal home">
+      <span class="brand-mark">C</span>
+      <span>CRYSTAL<span class="brand-version">/ 2.0.1</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#overview">Overview</a>
+      <a class="active" href="#commands">Commands</a>
+      <a href="#footer">Developer</a>
+    </nav>
+    <a class="nav-cta" href="https://wa.me/6281248030605" target="_blank" rel="noopener">Connect <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="overview">
+      <div class="eyebrow"><span class="status-dot"></span> WHATSAPP AUTOMATION ECOSYSTEM</div>
+      <h1>One system.<br><span>Infinite utility.</span></h1>
+      <p class="hero-copy">A structured command ecosystem built for clarity, control, and a cleaner workflow.</p>
+      <div class="hero-meta">
+        <div><span class="meta-label">CURRENT VERSION</span><strong id="bot-version">2.0.1</strong></div>
+        <div><span class="meta-label">COMMAND INDEX</span><strong id="command-count">--</strong></div>
+        <div><span class="meta-label">MAINTAINED BY</span><strong>SkyGhostID</strong></div>
+      </div>
+    </section>
+
+    <section class="command-section" id="commands">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">DOCUMENTATION / INDEX</div>
+          <h2>Command <span>Center</span></h2>
+          <p>Explore the Crystal command library.</p>
+        </div>
+        <div class="index-note"><span class="index-square"></span> LIVE JSON INDEX</div>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-box">
+          <span class="search-icon">⌕</span>
+          <input id="command-search" type="search" placeholder="Search command, type, or tag..." autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+        <div class="toolbar-meta"><span id="visible-count">0</span> RESULTS</div>
+      </div>
+
+      <div class="filter-row" id="category-filters" aria-label="Filter by category">
+        <button class="filter-chip selected" data-category="all" type="button">All commands</button>
+      </div>
+
+      <div class="catalog-state" id="catalog-state" role="status" aria-live="polite">
+        <span class="loader"></span> Loading command index...
+      </div>
+      <div class="command-grid" id="command-grid"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <span class="empty-symbol">⌕</span>
+        <strong>No command found</strong>
+        <p>Try another keyword or category.</p>
+      </div>
+      <p class="catalog-footnote">Command availability and access are subject to the bot's current configuration.</p>
+    </section>
+
+    <section class="developer-strip" id="footer">
+      <div>
+        <div class="eyebrow">BUILT WITH INTENTION</div>
+        <h2>Designed by <span>SkyGhostID.</span></h2>
+        <p>Minimal interface. Structured ecosystem. Crystal.</p>
+      </div>
+      <a href="https://hostinginzel.my.id" target="_blank" rel="noopener" class="outline-link">Visit developer ↗</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 SkyGhostID</span>
+    <span>CRYSTAL / COMMAND CENTER</span>
+  </footer>
+
+  <template id="command-card-template">
+    <article class="command-card">
+      <div class="card-topline">
+        <span class="command-category"></span>
+        <span class="command-status"></span>
+      </div>
+      <div class="command-name-row">
+        <h3 class="command-name"></h3>
+        <button class="copy-button" type="button" aria-label="Copy command" title="Copy command">COPY</button>
+      </div>
+      <div class="command-meta"></div>
+      <div class="command-description" hidden></div>
+      <div class="command-aliases" hidden></div>
+      <div class="command-tags" hidden></div>
+      <div class="command-date" hidden></div>
+    </article>
+  </template>
+</body>
+</html>
