@@ -67,6 +67,11 @@
         <span class="loader"></span> Loading command index...
       </div>
       <div class="command-grid" id="command-grid"></div>
+      <nav class="pagination" id="pagination" aria-label="Command pages" hidden>
+        <button class="page-button" id="prev-page" type="button" disabled>← Previous</button>
+        <span class="page-indicator" id="page-indicator" aria-live="polite">Page 1 of 1</span>
+        <button class="page-button" id="next-page" type="button" disabled>Next →</button>
+      </nav>
       <div class="empty-state" id="empty-state" hidden>
         <span class="empty-symbol">⌕</span>
         <strong>No command found</strong>

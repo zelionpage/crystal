@@ -2,6 +2,8 @@
   "use strict";
 
   const DATA_URL = "./commandsSheet.json";
+  const PAGE_SIZE = 9;
+
   const grid = document.getElementById("command-grid");
   const template = document.getElementById("command-card-template");
   const state = document.getElementById("catalog-state");
@@ -11,10 +13,15 @@
   const count = document.getElementById("visible-count");
   const total = document.getElementById("command-count");
   const version = document.getElementById("bot-version");
+  const pagination = document.getElementById("pagination");
+  const prevButton = document.getElementById("prev-page");
+  const nextButton = document.getElementById("next-page");
+  const pageIndicator = document.getElementById("page-indicator");
 
   let commands = [];
   let activeCategory = "all";
   let searchTerm = "";
+  let currentPage = 1;
 
   const hasValue = value => {
     if (value === null || value === undefined) return false;
@@ -97,7 +104,6 @@
       date.hidden = false;
     }
 
-    // Hide empty metadata containers instead of rendering blank space.
     if (!meta.children.length) meta.hidden = true;
     return fragment;
   }
@@ -125,9 +131,9 @@
     });
   }
 
-  function render() {
+  function getFilteredCommands() {
     const normalized = searchTerm.toLowerCase();
-    const visible = commands.filter(command => {
+    return commands.filter(command => {
       const matchesCategory = activeCategory === "all" || command.category === activeCategory;
       const haystack = [
         command.name, command.id, command.type, command.category,
@@ -137,11 +143,34 @@
       ].filter(hasValue).join(" ").toLowerCase();
       return matchesCategory && haystack.includes(normalized);
     });
+  }
 
-    grid.replaceChildren();
-    visible.forEach(command => grid.appendChild(makeCard(command)));
-    count.textContent = String(visible.length);
-    emptyState.hidden = visible.length !== 0;
+  function render() {
+    const filtered = getFilteredCommands();
+    const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+    currentPage = Math.min(currentPage, totalPages);
+
+    const start = (currentPage - 1) * PAGE_SIZE;
+    const pageItems = filtered.slice(start, start + PAGE_SIZE);
+
+    // Only the current page is turned into DOM cards.
+    const fragment = document.createDocumentFragment();
+    pageItems.forEach(command => fragment.appendChild(makeCard(command)));
+    grid.replaceChildren(fragment);
+
+    count.textContent = String(filtered.length);
+    emptyState.hidden = filtered.length !== 0;
+    pagination.hidden = filtered.length <= PAGE_SIZE;
+
+    prevButton.disabled = currentPage <= 1;
+    nextButton.disabled = currentPage >= totalPages;
+    pageIndicator.textContent = `Page ${currentPage} of ${totalPages}`;
+  }
+
+  function goToPage(page) {
+    currentPage = page;
+    render();
+    document.getElementById("commands").scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   async function init() {
@@ -167,6 +196,7 @@
 
   searchInput.addEventListener("input", event => {
     searchTerm = event.target.value.trim();
+    currentPage = 1;
     render();
   });
 
@@ -174,10 +204,20 @@
     const button = event.target.closest("[data-category]");
     if (!button) return;
     activeCategory = button.dataset.category;
+    currentPage = 1;
     filters.querySelectorAll(".filter-chip").forEach(chip => {
       chip.classList.toggle("selected", chip === button);
     });
     render();
+  });
+
+  prevButton.addEventListener("click", () => {
+    if (currentPage > 1) goToPage(currentPage - 1);
+  });
+
+  nextButton.addEventListener("click", () => {
+    const totalPages = Math.ceil(getFilteredCommands().length / PAGE_SIZE);
+    if (currentPage < totalPages) goToPage(currentPage + 1);
   });
 
   document.addEventListener("keydown", event => {
@@ -188,6 +228,7 @@
     if (event.key === "Escape" && document.activeElement === searchInput) {
       searchInput.value = "";
       searchTerm = "";
+      currentPage = 1;
       searchInput.blur();
       render();
     }
