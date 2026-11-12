@@ -50,7 +50,7 @@
         "system",
         "diagnostic"
       ],
-      "description": "Just latency / response test.",
+      "description": "Just latency and response test.",
       "example": true
     },
     {
