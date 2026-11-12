@@ -6,346 +6,400 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#080d14">
 
-  <title>Crystal 2</title>
-  <meta name="description" content="Crystal 2 - Your smart companion.">
+  <title>Crystal 2 | Intelligent Digital Experience</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <meta name="description"
+    content="Crystal 2, your intelligent digital companion. Explore our services and connect through WhatsApp.">
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      font-family: Arial, sans-serif;
-      background: #080d14;
-      color: #f5faff;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 390px;
-      text-align: center;
-    }
-
-    /* LANGUAGE SWITCHER */
-
-    .language {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 35px;
-      font-size: 12px;
-    }
-
-    .language button {
-      border: none;
-      background: transparent;
-      color: #667785;
-      font-size: 12px;
-      cursor: pointer;
-      padding: 6px 9px;
-      border-radius: 7px;
-      transition: .2s;
-    }
-
-    .language button.active {
-      background: #10283a;
-      color: #65d5ff;
-    }
-
-    .separator {
-      color: #394957;
-    }
-
-    /* MAIN CONTENT */
-
-    .logo {
-      width: 58px;
-      height: 58px;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 25px;
-      border-radius: 18px;
-      background: #10283a;
-      color: #65d5ff;
-      font-size: 28px;
-    }
-
-    h1 {
-      font-size: 30px;
-      font-weight: 700;
-      letter-spacing: -1px;
-      margin-bottom: 12px;
-    }
-
-    h1 span {
-      color: #65d5ff;
-    }
-
-    .description {
-      color: #91a5b5;
-      font-size: 14px;
-      line-height: 1.8;
-      margin-bottom: 28px;
-    }
-
-    .status {
-      color: #65d5ff;
-      font-size: 12px;
-      margin-bottom: 20px;
-    }
-
-    /* WHATSAPP BUTTON */
-
-    .button {
-      display: block;
-      width: 100%;
-      padding: 15px;
-      border-radius: 12px;
-      background: #168fc5;
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      transition: .2s;
-    }
-
-    .button:hover {
-      background: #20a9e5;
-    }
-
-    .button:active {
-      transform: scale(.98);
-    }
-
-    /* BACKUP CONTACT */
-
-    .backup {
-      margin-top: 24px;
-      padding: 17px;
-      border: 1px solid #1b3445;
-      border-radius: 12px;
-      background: #0c1721;
-      text-align: left;
-    }
-
-    .backup-title {
-      color: #91a5b5;
-      font-size: 11px;
-      margin-bottom: 10px;
-    }
-
-    .number {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .number strong {
-      color: #65d5ff;
-      font-size: 16px;
-      letter-spacing: .5px;
-      user-select: all;
-    }
-
-    .copy-button {
-      border: 1px solid #29485c;
-      background: #10283a;
-      color: #65d5ff;
-      border-radius: 7px;
-      padding: 7px 10px;
-      font-size: 11px;
-      cursor: pointer;
-    }
-
-    .backup-note {
-      color: #718493;
-      font-size: 11px;
-      line-height: 1.7;
-      margin-top: 12px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      margin-top: 55px;
-      color: #667785;
-      font-size: 12px;
-    }
-
-    footer a {
-      color: #65d5ff;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 360px) {
-      h1 {
-        font-size: 27px;
-      }
-
-      .number strong {
-        font-size: 14px;
-      }
-    }
-  </style>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <main class="container">
-
-    <!-- LANGUAGE SWITCHER -->
-
-    <div class="language">
-      <button
-        class="active"
-        id="idBtn"
-        onclick="setLanguage('id')"
-      >ID</button>
-
-      <span class="separator">|</span>
-
-      <button
-        id="enBtn"
-        onclick="setLanguage('en')"
-      >EN</button>
-    </div>
-
-    <!-- BRAND -->
-
-    <div class="logo">✦</div>
-
-    <h1>Crystal <span>2</span></h1>
-
-    <p class="description"
-       data-id="Asisten pintar Anda siap digunakan.<br>Lanjutkan pengalaman bersama Crystal melalui WhatsApp."
-       data-en="Your smart companion is ready.<br>Continue your experience with Crystal through WhatsApp.">
-      Asisten pintar Anda siap digunakan.<br>
-      Lanjutkan pengalaman bersama Crystal melalui WhatsApp.
-    </p>
-
-    <p class="status"
-       data-id="● Siap terhubung"
-       data-en="● Ready to connect">
-      ● Siap terhubung
-    </p>
-
-    <!-- WHATSAPP -->
-
-    <a
-      class="button"
-      href="https://wa.me/6281248030605"
-      target="_blank"
-      rel="noopener noreferrer"
-      data-id="Hubungi Crystal di WhatsApp ↗"
-      data-en="Connect to Crystal on WhatsApp ↗"
-    >
-      Hubungi Crystal di WhatsApp ↗
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <a href="#home" class="brand">
+      <span class="brand-icon">✦</span>
+      Crystal<span class="blue">2</span>
     </a>
 
-    <!-- BACKUP CONTACT -->
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" data-id="Beranda" data-en="Home">Beranda</a>
+      <a href="#about" data-id="Tentang" data-en="About">Tentang</a>
+      <a href="#features" data-id="Fitur" data-en="Features">Fitur</a>
+      <a href="#services" data-id="Layanan" data-en="Services">Layanan</a>
+      <a href="#faq" data-id="FAQ" data-en="FAQ">FAQ</a>
+    </nav>
 
-    <section class="backup">
-
-      <p class="backup-title"
-         data-id="ALTERNATIF KONTAK"
-         data-en="ALTERNATIVE CONTACT">
-        ALTERNATIF KONTAK
-      </p>
-
-      <div class="number">
-        <strong>+62 812-4803-0605</strong>
-
-        <button
-          class="copy-button"
-          onclick="copyNumber()"
-          data-id="Salin"
-          data-en="Copy"
-        >
-          Salin
-        </button>
+    <div class="nav-actions">
+      <div class="language">
+        <button id="idBtn" class="active" onclick="setLanguage('id')">ID</button>
+        <span>|</span>
+        <button id="enBtn" onclick="setLanguage('en')">EN</button>
       </div>
 
-      <p class="backup-note"
-         data-id="Jika tombol WhatsApp tidak berfungsi, catat atau salin nomor di atas. Buka WhatsApp secara manual dan mulai chat dengan nomor tersebut."
-         data-en="If the WhatsApp button doesn't work, save or copy the number above. Open WhatsApp manually and start a chat with that number.">
-        Jika tombol WhatsApp tidak berfungsi, catat atau salin nomor di atas.
-        Buka WhatsApp secara manual dan mulai chat dengan nomor tersebut.
-      </p>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+    </div>
+  </header>
 
+  <main>
+
+    <!-- HERO -->
+    <section class="hero section" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">
+          <span class="pulse"></span>
+          DIGITAL EXPERIENCE
+        </div>
+
+        <h1>
+          Meet <span class="blue">Crystal 2.</span><br>
+          <span data-id="Lebih dekat dengan masa depan."
+                data-en="Closer to the future.">
+            Lebih dekat dengan masa depan.
+          </span>
+        </h1>
+
+        <p class="hero-description"
+           data-id="Asisten digital yang dirancang untuk menghadirkan pengalaman komunikasi dan teknologi yang lebih praktis."
+           data-en="A digital assistant designed to make communication and technology more accessible.">
+          Asisten digital yang dirancang untuk menghadirkan pengalaman komunikasi dan teknologi yang lebih praktis.
+        </p>
+
+        <div class="hero-actions">
+          <a href="https://wa.me/6281248030605"
+             class="btn btn-primary"
+             target="_blank"
+             rel="noopener noreferrer"
+             data-id="Mulai Terhubung ↗"
+             data-en="Get Connected ↗">
+            Mulai Terhubung ↗
+          </a>
+
+          <a href="#about" class="btn btn-secondary"
+             data-id="Jelajahi Crystal"
+             data-en="Explore Crystal">
+            Jelajahi Crystal
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="crystal-orb">
+          <span>✦</span>
+        </div>
+        <div class="orb-label">
+          <strong>CRYSTAL 2</strong>
+          <span>INTELLIGENT EXPERIENCE</span>
+        </div>
+      </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="section-heading">
+        <span class="eyebrow">01 / ABOUT</span>
+        <h2 data-id="Mengenal Crystal 2"
+            data-en="About Crystal 2">
+          Mengenal Crystal 2
+        </h2>
+        <p data-id="Crystal 2 adalah proyek asisten digital yang dikembangkan untuk menghubungkan komunikasi, teknologi, dan pengalaman pengguna dalam satu ekosistem."
+           data-en="Crystal 2 is a digital assistant project designed to connect communication, technology, and user experience in one ecosystem.">
+          Crystal 2 adalah proyek asisten digital yang dikembangkan untuk menghubungkan komunikasi, teknologi, dan pengalaman pengguna dalam satu ekosistem.
+        </p>
+      </div>
 
-    <footer>
-      © 2026
-      <a
-        href="https://hostinginzel.my.id"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        SkyGhostID
+      <div class="about-grid">
+        <article class="info-card">
+          <span class="card-icon">✧</span>
+          <h3 data-id="Sederhana" data-en="Simple">Sederhana</h3>
+          <p data-id="Pengalaman penggunaan yang mudah dipahami."
+             data-en="An experience that is easy to understand.">
+            Pengalaman penggunaan yang mudah dipahami.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <span class="card-icon">◈</span>
+          <h3 data-id="Terintegrasi" data-en="Connected">Terintegrasi</h3>
+          <p data-id="Dirancang untuk terhubung dengan berbagai layanan digital."
+             data-en="Designed to connect with different digital services.">
+            Dirancang untuk terhubung dengan berbagai layanan digital.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <span class="card-icon">⌘</span>
+          <h3 data-id="Berkembang" data-en="Evolving">Berkembang</h3>
+          <p data-id="Dibangun secara bertahap dengan ruang untuk inovasi."
+             data-en="Built progressively with room for innovation.">
+            Dibangun secara bertahap dengan ruang untuk inovasi.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <div class="section-heading">
+        <span class="eyebrow">02 / FEATURES</span>
+        <h2 data-id="Apa yang ditawarkan?"
+            data-en="What does it offer?">
+          Apa yang ditawarkan?
+        </h2>
+        <p data-id="Beberapa area pengembangan utama dalam ekosistem Crystal 2."
+           data-en="The main development areas of the Crystal 2 ecosystem.">
+          Beberapa area pengembangan utama dalam ekosistem Crystal 2.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="card-icon">✉</span>
+          <h3>WhatsApp Integration</h3>
+          <p data-id="Akses layanan Crystal melalui WhatsApp."
+             data-en="Access Crystal services through WhatsApp.">
+            Akses layanan Crystal melalui WhatsApp.
+          </p>
+          <span class="tag">COMMUNICATION</span>
+        </article>
+
+        <article class="feature-card">
+          <span class="card-icon">✧</span>
+          <h3>AI Experience</h3>
+          <p data-id="Pengembangan pengalaman asisten berbasis kecerdasan buatan."
+             data-en="Development of AI-powered assistant experiences.">
+            Pengembangan pengalaman asisten berbasis kecerdasan buatan.
+          </p>
+          <span class="tag">INTELLIGENCE</span>
+        </article>
+
+        <article class="feature-card">
+          <span class="card-icon">⌘</span>
+          <h3>API Ecosystem</h3>
+          <p data-id="Ruang pengembangan integrasi untuk developer."
+             data-en="Integration development opportunities for developers.">
+            Ruang pengembangan integrasi untuk developer.
+          </p>
+          <span class="tag">DEVELOPMENT</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="section-heading">
+        <span class="eyebrow">03 / SERVICES</span>
+        <h2 data-id="Jelajahi layanan"
+            data-en="Explore services">
+          Jelajahi layanan
+        </h2>
+      </div>
+
+      <div class="service-list">
+
+        <article class="service-item">
+          <div>
+            <span class="service-number">01</span>
+            <h3>Crystal WhatsApp</h3>
+            <p data-id="Hubungi Crystal melalui WhatsApp."
+               data-en="Connect with Crystal through WhatsApp.">
+              Hubungi Crystal melalui WhatsApp.
+            </p>
+          </div>
+          <a href="https://wa.me/6281248030605"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="service-link">↗</a>
+        </article>
+
+        <article class="service-item">
+          <div>
+            <span class="service-number">02</span>
+            <h3>Crystal Dashboard</h3>
+            <p data-id="Pusat pengelolaan layanan. Dalam pengembangan."
+               data-en="A service management center. In development.">
+              Pusat pengelolaan layanan. Dalam pengembangan.
+            </p>
+          </div>
+          <span class="coming-soon">COMING SOON</span>
+        </article>
+
+        <article class="service-item">
+          <div>
+            <span class="service-number">03</span>
+            <h3>Crystal API</h3>
+            <p data-id="Integrasi teknologi untuk developer. Dalam pengembangan."
+               data-en="Technology integrations for developers. In development.">
+              Integrasi teknologi untuk developer. Dalam pengembangan.
+            </p>
+          </div>
+          <span class="coming-soon">COMING SOON</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ECOSYSTEM PREVIEW -->
+    <section class="section ecosystem" id="ecosystem">
+      <div class="section-heading">
+        <span class="eyebrow">04 / ECOSYSTEM</span>
+        <h2 data-id="Satu ekosistem, banyak kemungkinan."
+            data-en="One ecosystem, many possibilities.">
+          Satu ekosistem, banyak kemungkinan.
+        </h2>
+        <p data-id="Crystal 2 dikembangkan dengan visi untuk menghadirkan berbagai layanan digital yang saling terhubung."
+           data-en="Crystal 2 is being developed with a vision of bringing connected digital services together.">
+          Crystal 2 dikembangkan dengan visi untuk menghadirkan berbagai layanan digital yang saling terhubung.
+        </p>
+      </div>
+
+      <div class="ecosystem-panel">
+        <div class="eco-center">
+          <span>✦</span>
+          <strong>CRYSTAL 2</strong>
+          <small>CORE PROJECT</small>
+        </div>
+
+        <div class="eco-node node-one">WhatsApp</div>
+        <div class="eco-node node-two">AI</div>
+        <div class="eco-node node-three">Dashboard</div>
+        <div class="eco-node node-four">API</div>
+      </div>
+    </section>
+
+    <!-- DEVELOPER -->
+    <section class="section developer" id="developer">
+      <div class="developer-content">
+        <span class="eyebrow">05 / DEVELOPERS</span>
+        <h2 data-id="Dibangun untuk terus berkembang."
+            data-en="Built to keep evolving.">
+          Dibangun untuk terus berkembang.
+        </h2>
+        <p data-id="Dokumentasi, API, dan tools developer merupakan bagian dari rencana pengembangan Crystal 2."
+           data-en="Documentation, APIs, and developer tools are part of the Crystal 2 development roadmap.">
+          Dokumentasi, API, dan tools developer merupakan bagian dari rencana pengembangan Crystal 2.
+        </p>
+        <span class="coming-soon">DEVELOPER PORTAL · COMING SOON</span>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="section-heading">
+        <span class="eyebrow">06 / FAQ</span>
+        <h2 data-id="Pertanyaan umum"
+            data-en="Frequently asked questions">
+          Pertanyaan umum
+        </h2>
+      </div>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary data-id="Apa itu Crystal 2?"
+                   data-en="What is Crystal 2?">
+            Apa itu Crystal 2?
+          </summary>
+          <p data-id="Crystal 2 adalah proyek asisten digital dan ekosistem teknologi yang sedang dikembangkan."
+             data-en="Crystal 2 is a digital assistant and technology ecosystem project currently in development.">
+            Crystal 2 adalah proyek asisten digital dan ekosistem teknologi yang sedang dikembangkan.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary data-id="Bagaimana cara menghubungi Crystal?"
+                   data-en="How do I contact Crystal?">
+            Bagaimana cara menghubungi Crystal?
+          </summary>
+          <p data-id="Kamu dapat menggunakan tombol WhatsApp pada halaman ini atau menghubungi nomor yang tersedia."
+             data-en="You can use the WhatsApp button on this page or contact the number provided.">
+            Kamu dapat menggunakan tombol WhatsApp pada halaman ini atau menghubungi nomor yang tersedia.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary data-id="Apakah Crystal API sudah tersedia?"
+                   data-en="Is Crystal API available yet?">
+            Apakah Crystal API sudah tersedia?
+          </summary>
+          <p data-id="Belum. API dan developer portal masih menjadi bagian dari roadmap pengembangan."
+             data-en="Not yet. The API and developer portal are still part of the development roadmap.">
+            Belum. API dan developer portal masih menjadi bagian dari roadmap pengembangan.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary data-id="Apakah website ini mendukung bahasa Inggris?"
+                   data-en="Does this website support English?">
+            Apakah website ini mendukung bahasa Inggris?
+          </summary>
+          <p data-id="Ya. Gunakan tombol ID dan EN di bagian navigasi untuk mengganti bahasa."
+             data-en="Yes. Use the ID and EN buttons in the navigation to switch languages.">
+            Ya. Gunakan tombol ID dan EN di bagian navigasi untuk mengganti bahasa.
+          </p>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <span class="eyebrow">07 / CONTACT</span>
+
+      <h2 data-id="Mari terhubung."
+          data-en="Let's connect.">
+        Mari terhubung.
+      </h2>
+
+      <p data-id="Punya pertanyaan atau ingin mengenal Crystal lebih jauh?"
+         data-en="Have questions or want to learn more about Crystal?">
+        Punya pertanyaan atau ingin mengenal Crystal lebih jauh?
+      </p>
+
+      <a href="https://wa.me/6281248030605"
+         class="btn btn-primary"
+         target="_blank"
+         rel="noopener noreferrer"
+         data-id="Hubungi melalui WhatsApp ↗"
+         data-en="Contact via WhatsApp ↗">
+        Hubungi melalui WhatsApp ↗
       </a>
-    </footer>
+
+      <div class="contact-number">
+        <small data-id="NOMOR WHATSAPP"
+               data-en="WHATSAPP NUMBER">
+          NOMOR WHATSAPP
+        </small>
+        <strong>+62 812-4803-0605</strong>
+      </div>
+    </section>
 
   </main>
 
-  <script>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <a href="#home" class="brand">
+      <span class="brand-icon">✦</span>
+      Crystal<span class="blue">2</span>
+    </a>
 
-    // LANGUAGE SYSTEM
+    <p>© 2026
+      <a href="https://hostinginzel.my.id"
+         target="_blank"
+         rel="noopener noreferrer">SkyGhostID</a>
+    </p>
 
-    function setLanguage(lang) {
-      document.documentElement.lang = lang;
+    <span data-id="Dibuat untuk masa depan."
+          data-en="Built for the future.">
+      Dibuat untuk masa depan.
+    </span>
+  </footer>
 
-      document.querySelectorAll("[data-id][data-en]")
-        .forEach(element => {
-          element.innerHTML = element.dataset[lang];
-        });
-
-      document.getElementById("idBtn")
-        .classList.toggle("active", lang === "id");
-
-      document.getElementById("enBtn")
-        .classList.toggle("active", lang === "en");
-    }
-
-    // COPY WHATSAPP NUMBER
-
-    async function copyNumber() {
-      const number = "6281248030605";
-      const button = document.querySelector(".copy-button");
-      const lang = document.documentElement.lang;
-
-      try {
-        await navigator.clipboard.writeText(number);
-
-        button.textContent =
-          lang === "id" ? "Tersalin!" : "Copied!";
-
-      } catch (error) {
-        button.textContent =
-          lang === "id" ? "Salin manual" : "Copy manually";
-      }
-
-      setTimeout(() => {
-        button.textContent =
-          lang === "id" ? "Salin" : "Copy";
-      }, 2000);
-    }
-
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
