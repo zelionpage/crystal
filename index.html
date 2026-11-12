@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#080d14">
 
   <title>Crystal 2</title>
-  <meta name="description" content="Crystal 2 - Your smart companion is ready.">
+  <meta name="description" content="Crystal 2 - Your smart companion.">
 
   <style>
     * {
@@ -29,9 +29,42 @@
 
     .container {
       width: 100%;
-      max-width: 380px;
+      max-width: 390px;
       text-align: center;
     }
+
+    /* LANGUAGE SWITCHER */
+
+    .language {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 35px;
+      font-size: 12px;
+    }
+
+    .language button {
+      border: none;
+      background: transparent;
+      color: #667785;
+      font-size: 12px;
+      cursor: pointer;
+      padding: 6px 9px;
+      border-radius: 7px;
+      transition: .2s;
+    }
+
+    .language button.active {
+      background: #10283a;
+      color: #65d5ff;
+    }
+
+    .separator {
+      color: #394957;
+    }
+
+    /* MAIN CONTENT */
 
     .logo {
       width: 58px;
@@ -59,15 +92,17 @@
     .description {
       color: #91a5b5;
       font-size: 14px;
-      line-height: 1.7;
-      margin-bottom: 30px;
+      line-height: 1.8;
+      margin-bottom: 28px;
     }
 
     .status {
       color: #65d5ff;
       font-size: 12px;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
+
+    /* WHATSAPP BUTTON */
 
     .button {
       display: block;
@@ -90,8 +125,58 @@
       transform: scale(.98);
     }
 
+    /* BACKUP CONTACT */
+
+    .backup {
+      margin-top: 24px;
+      padding: 17px;
+      border: 1px solid #1b3445;
+      border-radius: 12px;
+      background: #0c1721;
+      text-align: left;
+    }
+
+    .backup-title {
+      color: #91a5b5;
+      font-size: 11px;
+      margin-bottom: 10px;
+    }
+
+    .number {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .number strong {
+      color: #65d5ff;
+      font-size: 16px;
+      letter-spacing: .5px;
+      user-select: all;
+    }
+
+    .copy-button {
+      border: 1px solid #29485c;
+      background: #10283a;
+      color: #65d5ff;
+      border-radius: 7px;
+      padding: 7px 10px;
+      font-size: 11px;
+      cursor: pointer;
+    }
+
+    .backup-note {
+      color: #718493;
+      font-size: 11px;
+      line-height: 1.7;
+      margin-top: 12px;
+    }
+
+    /* FOOTER */
+
     footer {
-      margin-top: 65px;
+      margin-top: 55px;
       color: #667785;
       font-size: 12px;
     }
@@ -104,6 +189,16 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 360px) {
+      h1 {
+        font-size: 27px;
+      }
+
+      .number strong {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 
@@ -111,36 +206,146 @@
 
   <main class="container">
 
+    <!-- LANGUAGE SWITCHER -->
+
+    <div class="language">
+      <button
+        class="active"
+        id="idBtn"
+        onclick="setLanguage('id')"
+      >ID</button>
+
+      <span class="separator">|</span>
+
+      <button
+        id="enBtn"
+        onclick="setLanguage('en')"
+      >EN</button>
+    </div>
+
+    <!-- BRAND -->
+
     <div class="logo">✦</div>
 
     <h1>Crystal <span>2</span></h1>
 
-    <p class="description">
-      Your smart companion is ready.<br>
-      Continue your experience through WhatsApp.
+    <p class="description"
+       data-id="Asisten pintar Anda siap digunakan.<br>Lanjutkan pengalaman bersama Crystal melalui WhatsApp."
+       data-en="Your smart companion is ready.<br>Continue your experience with Crystal through WhatsApp.">
+      Asisten pintar Anda siap digunakan.<br>
+      Lanjutkan pengalaman bersama Crystal melalui WhatsApp.
     </p>
 
-    <p class="status">
-      ● Ready to connect
+    <p class="status"
+       data-id="● Siap terhubung"
+       data-en="● Ready to connect">
+      ● Siap terhubung
     </p>
+
+    <!-- WHATSAPP -->
 
     <a
       class="button"
       href="https://wa.me/6281248030605"
       target="_blank"
       rel="noopener noreferrer"
+      data-id="Hubungi Crystal di WhatsApp ↗"
+      data-en="Connect to Crystal on WhatsApp ↗"
     >
-      Continue to WhatsApp ↗
+      Hubungi Crystal di WhatsApp ↗
     </a>
+
+    <!-- BACKUP CONTACT -->
+
+    <section class="backup">
+
+      <p class="backup-title"
+         data-id="ALTERNATIF KONTAK"
+         data-en="ALTERNATIVE CONTACT">
+        ALTERNATIF KONTAK
+      </p>
+
+      <div class="number">
+        <strong>+62 812-4803-0605</strong>
+
+        <button
+          class="copy-button"
+          onclick="copyNumber()"
+          data-id="Salin"
+          data-en="Copy"
+        >
+          Salin
+        </button>
+      </div>
+
+      <p class="backup-note"
+         data-id="Jika tombol WhatsApp tidak berfungsi, catat atau salin nomor di atas. Buka WhatsApp secara manual dan mulai chat dengan nomor tersebut."
+         data-en="If the WhatsApp button doesn't work, save or copy the number above. Open WhatsApp manually and start a chat with that number.">
+        Jika tombol WhatsApp tidak berfungsi, catat atau salin nomor di atas.
+        Buka WhatsApp secara manual dan mulai chat dengan nomor tersebut.
+      </p>
+
+    </section>
+
+    <!-- FOOTER -->
 
     <footer>
       © 2026
-      <a href="https://hostinginzel.my.id">
+      <a
+        href="https://hostinginzel.my.id"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         SkyGhostID
       </a>
     </footer>
 
   </main>
+
+  <script>
+
+    // LANGUAGE SYSTEM
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-id][data-en]")
+        .forEach(element => {
+          element.innerHTML = element.dataset[lang];
+        });
+
+      document.getElementById("idBtn")
+        .classList.toggle("active", lang === "id");
+
+      document.getElementById("enBtn")
+        .classList.toggle("active", lang === "en");
+    }
+
+    // COPY WHATSAPP NUMBER
+
+    async function copyNumber() {
+      const number = "6281248030605";
+      const button = document.querySelector(".copy-button");
+      const lang = document.documentElement.lang;
+
+      try {
+        await navigator.clipboard.writeText(number);
+
+        button.textContent =
+          lang === "id" ? "Tersalin!" : "Copied!";
+
+      } catch (error) {
+        button.textContent =
+          lang === "id" ? "Salin manual" : "Copy manually";
+      }
+
+      setTimeout(() => {
+        button.textContent =
+          lang === "id" ? "Salin" : "Copy";
+      }, 2000);
+    }
+
+  </script>
 
 </body>
 </html>
