@@ -26,7 +26,7 @@ button, input { font: inherit; }
 }
 .brand { display: flex; align-items: center; gap: 11px; font-size: 12px; font-weight: 800; letter-spacing: .16em; }
 .brand-mark {
-  width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid var(--line-strong);
+  width: 30px; height: 30px; display: grid; place-items: center; border: 0px solid var(--line-strong);
   color: var(--cyan); border-radius: 8px; font-size: 20px;
 }
 .brand-version { color: #74869d; font: 10px "DM Mono", monospace; letter-spacing: .04em; margin-left: 7px; }
