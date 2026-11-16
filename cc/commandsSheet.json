@@ -48,6 +48,31 @@
         "admin"
       ],
       "description": "Automated Financial & Group Analytics Dashboard with Rotation & JSON Export",
+      "usage": "!analytics -pass <password> [list/dummy/export/delete]",
+      "example": true
+    },
+    {
+      "id": "approve",
+      "name": "!approve",
+      "type": "utility",
+      "category": "admin",
+      "access": "owner",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [
+        "!acc",
+        "!reject",
+        "!tolak",
+        "!pending",
+        "!approvelist",
+        "!listpending"
+      ],
+      "tags": [
+        "admin"
+      ],
+      "description": "Manajemen approval tier user (melihat list pending, approve, atau reject transaksi)",
+      "usage": "!approve [list | <id_approval>] atau !reject <id_approval>",
       "example": true
     },
     {
@@ -64,6 +89,7 @@
         "admin"
       ],
       "description": "Sistem monitoring audit, health, auto-report 3 hari, & Master Analytics/Security Export",
+      "usage": "!audit [log|status|clear] atau !analytics -pass <password> [list/dummy/export/delete]",
       "example": true
     },
     {
@@ -80,6 +106,7 @@
         "admin"
       ],
       "description": "Manajemen blacklist profesional dengan auto-LID resolution & custom penalty",
+      "usage": "!blacklist [list | add <nomor> <alasan> | -custom add <nomor> -reason <teks> -blacklistdur <jam> | remove <001/-all>]",
       "example": true
     },
     {
@@ -99,6 +126,24 @@
         "developer"
       ],
       "description": "Mengekstrak seluruh metadata command bot secara rekursif ke dalam format JSON standar.",
+      "usage": "!exportcmd",
+      "example": true
+    },
+    {
+      "id": "sentinel",
+      "name": "!sentinel",
+      "type": "utility",
+      "category": "system",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "system"
+      ],
+      "description": "Sistem pertahanan & panel kontrol keamanan grup otomatis (Ramah Pemula & Multi-Set).",
+      "usage": "!sentinel [-group add/remove/list] atau !sentinel set [fitur:on/off] ...",
       "example": true
     },
     {
@@ -115,6 +160,7 @@
         "admin"
       ],
       "description": "Mematikan bot secara permanen",
+      "usage": "!kill",
       "example": true
     },
     {
@@ -131,6 +177,7 @@
         "system"
       ],
       "description": "Monitoring dashboard khusus owner",
+      "usage": "!monitor",
       "example": true
     },
     {
@@ -147,6 +194,7 @@
         "system"
       ],
       "description": "Menonaktifkan bot sementara",
+      "usage": "!shutdown",
       "example": true
     },
     {
@@ -163,6 +211,7 @@
         "system"
       ],
       "description": "Mengaktifkan bot kembali",
+      "usage": "!start",
       "example": true
     },
     {
@@ -181,6 +230,7 @@
         "system"
       ],
       "description": "Menampilkan bantuan command berdasarkan kategori",
+      "usage": "!help <nama command / nomor index>",
       "example": true
     },
     {
@@ -197,6 +247,7 @@
         "media"
       ],
       "description": "Download video dari Facebook",
+      "usage": "!facebook <link>",
       "example": true
     },
     {
@@ -213,6 +264,7 @@
         "media"
       ],
       "description": "Download media dari Instagram (foto/video)",
+      "usage": "!insta <link>",
       "example": true
     },
     {
@@ -229,6 +281,7 @@
         "tools"
       ],
       "description": "Scrape data dari website",
+      "usage": "!scrape <url>",
       "example": true
     },
     {
@@ -245,6 +298,7 @@
         "tools"
       ],
       "description": "Download video dari TikTok (tanpa watermark)",
+      "usage": "!tiktok <link>",
       "example": true
     },
     {
@@ -261,6 +315,7 @@
         "media"
       ],
       "description": "Download media dari Twitter/X (foto/video)",
+      "usage": "!twitter <link>",
       "example": true
     },
     {
@@ -277,6 +332,7 @@
         "tools"
       ],
       "description": "Download YouTube audio (MP3 format)",
+      "usage": "!ytmp3 <link>",
       "example": true
     },
     {
@@ -293,6 +349,7 @@
         "tools"
       ],
       "description": "Download YouTube video (MP4 format)",
+      "usage": "!ytmp4 <link>",
       "example": true
     },
     {
@@ -309,6 +366,7 @@
         "system"
       ],
       "description": "Menampilkan daftar command",
+      "usage": "!menu [kategori]",
       "example": true
     },
     {
@@ -330,6 +388,7 @@
         "management"
       ],
       "description": "Sistem manajemen profil pengguna, tier akses (user/vip/vvip), konfigurasi timezone, dan panduan lengkap",
+      "usage": "!profile [register <nama> [-tier vip/vvip] | settz <wib/wita/wit> | logout]",
       "example": true
     },
     {
@@ -346,6 +405,7 @@
         "vvip-tools"
       ],
       "description": "Fitur AI canggih khusus member VVIP",
+      "usage": "!aistudio help untuk detail",
       "example": true
     },
     {
@@ -362,6 +422,7 @@
         "vvip-tools"
       ],
       "description": "Fitur AI canggih khusus member VVIP",
+      "usage": "!aistudiov help untuk detail",
       "example": true
     },
     {
@@ -378,6 +439,7 @@
         "vvip-tools"
       ],
       "description": "Distributed Cron-Job Scheduler & Advanced Web Scraper",
+      "usage": "!cron help untuk detail",
       "example": true
     },
     {
@@ -394,6 +456,7 @@
         "special"
       ],
       "description": "Daftar Game Popular SkyGhostID, Minecraft Server Info, etc",
+      "usage": "!gameMe",
       "example": true
     },
     {
@@ -410,6 +473,7 @@
         "image"
       ],
       "description": "Membuat atau mengonversi animasi GIF",
+      "usage": "!gif (reply video/media)",
       "example": true
     },
     {
@@ -428,6 +492,7 @@
         "management"
       ],
       "description": "Group data & analytics history exporter",
+      "usage": "!groupBackup",
       "example": true
     },
     {
@@ -444,6 +509,7 @@
         "image"
       ],
       "description": "Lottie file JSON editor dan converter",
+      "usage": "!lottie (kirim file json atau spreadsheets gambar)",
       "example": true
     },
     {
@@ -460,6 +526,7 @@
         "special"
       ],
       "description": "-",
+      "usage": "!pruductMe",
       "example": true
     },
     {
@@ -476,6 +543,7 @@
         "vvip-tools"
       ],
       "description": "Modular Plugin Sandbox (Dynamic Runtime Execution)",
+      "usage": "!sandbox help untuk detail",
       "example": true
     },
     {
@@ -497,6 +565,7 @@
         "devhub"
       ],
       "description": "Developer Hub (skyghost.id)",
+      "usage": "!s <parameter> (contoh: !s devProfile)",
       "example": true
     },
     {
@@ -513,6 +582,7 @@
         "image"
       ],
       "description": "Media & image editing studio tingkat lanjut",
+      "usage": "!studio",
       "example": true
     },
     {
@@ -529,6 +599,7 @@
         "special"
       ],
       "description": "Topup Assistant via WhatsApp ke Website official admin",
+      "usage": "!topup txcheck/add/history",
       "example": true
     },
     {
@@ -545,6 +616,7 @@
         "vvip-tools"
       ],
       "description": "Encrypted Cloud Vault & Session Locker (AES-256)",
+      "usage": "!vault help untuk detail",
       "example": true
     },
     {
@@ -561,6 +633,7 @@
         "vvip-tools"
       ],
       "description": "AI Voice Cloning & Text-to-Speech Customization",
+      "usage": "!voice help untuk detail",
       "example": true
     },
     {
@@ -577,6 +650,7 @@
         "system"
       ],
       "description": "Menampilkan info pembuat bot",
+      "usage": "!credit",
       "example": true
     },
     {
@@ -593,6 +667,7 @@
         "image"
       ],
       "description": "Ultimate Image Processor: Kompres, Resize, Filter, Blur, Sharpen, Border, Crop, & Watermark",
+      "usage": "!image [quality] [width] [format] [effect/filter] [nowm]",
       "example": true
     },
     {
@@ -609,6 +684,7 @@
         "system"
       ],
       "description": "Menampilkan informasi bot",
+      "usage": "!info",
       "example": true
     },
     {
@@ -628,6 +704,7 @@
         "tools"
       ],
       "description": "Manajemen catatan lengkap (buat, list, baca, hapus, rename)",
+      "usage": "!note [add] <judul> | <isi> atau !note [list|get|del|rename]",
       "example": true
     },
     {
@@ -644,6 +721,7 @@
         "system"
       ],
       "description": "Test respons bot",
+      "usage": "!ping",
       "example": true
     },
     {
@@ -666,6 +744,7 @@
         "tools"
       ],
       "description": "Generate atau scan QR code dalam satu perintah",
+      "usage": "!qr [-read|-gen] <text atau reply gambar>",
       "example": true
     },
     {
@@ -686,6 +765,7 @@
         "management"
       ],
       "description": "Sistem pengingat profesional berbasis Timezone User dengan persitensi DB & Importance Level API",
+      "usage": "!remind <tanggal> <jam> [AM/PM] <pesan> [-ime <level>] [-prs <prioritas>]",
       "example": true
     },
     {
@@ -702,6 +782,7 @@
         "system"
       ],
       "description": "Menampilkan status bot",
+      "usage": "!status",
       "example": true
     },
     {
@@ -724,6 +805,7 @@
         "media"
       ],
       "description": "Membua sticker dari gambar/URL atau convert sticker ke image",
+      "usage": "!sticker [-toimage] (reply/kirim media) atau !sticker <url>",
       "example": true
     },
     {
@@ -744,6 +826,7 @@
         "tools"
       ],
       "description": "Translate text antar bahasa",
+      "usage": "!translate <text> atau !translate <from_lang> <text> to <to_lang>",
       "example": true
     }
   ]
