@@ -57,6 +57,19 @@
       detail.append(makeElement("p", "command-description", command.description));
     }
 
+    // 💡 Render properti USAGE jika tersedia
+    if (hasValue(command.usage)) {
+      const usageBox = makeElement("div", "detail-extra");
+      usageBox.append(makeElement("span", "detail-label", "USAGE"));
+      
+      const usageVal = makeElement("span", "detail-value", command.usage);
+      usageVal.style.fontFamily = '"DM Mono", monospace';
+      usageVal.style.color = "var(--cyan)";
+      usageBox.append(usageVal);
+      
+      detail.append(usageBox);
+    }
+
     const metadata = makeElement("div", "detail-grid");
     addDetailLine(metadata, "TYPE", hasValue(command.type) ? pretty(command.type) : null);
     addDetailLine(metadata, "ACCESS", hasValue(command.access) ? pretty(command.access) : null);
@@ -140,6 +153,7 @@
       const haystack = [
         command.name, command.id, command.type, command.category,
         command.access, command.status, command.description,
+        command.usage, // <-- Termasuk usage dalam pencarian web
         ...(Array.isArray(command.tags) ? command.tags : []),
         ...(Array.isArray(command.aliases) ? command.aliases : [])
       ].filter(hasValue).join(" ").toLowerCase();
@@ -210,7 +224,6 @@
       const detail = row.querySelector(".command-detail");
       const isOpen = actionButton.getAttribute("aria-expanded") === "true";
 
-      // Keep only one expanded detail mounted at a time.
       if (expandedId !== null && String(expandedId) !== row.dataset.commandId) {
         const previous = list.querySelector(".command-row.is-expanded");
         if (previous) {
