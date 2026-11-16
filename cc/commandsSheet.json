@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "bot": "Crystal",
   "botVersion": "2.0.1",
-  "updatedAt": null,
+  "updatedAt": "2026-11-16",
   "defaults": {
     "dateFormat": "YYYY-MM-DD",
     "emptyValueBehavior": "hide",
@@ -35,93 +35,87 @@
   },
   "commands": [
     {
-      "id": "ping",
-      "name": "!ping",
+      "id": "analytics",
+      "name": "!analytics",
       "type": "utility",
-      "category": "system",
-      "access": "user",
-      "status": "stable",
-      "releaseDate": "2026-11-9",
+      "category": "admin",
+      "access": "vvip",
+      "status": "prototype",
+      "releaseDate": null,
       "version": "2.0.1",
-      "aliases": [
-        "!latency"
-      ],
+      "aliases": [],
       "tags": [
-        "system",
-        "diagnostic"
+        "admin"
       ],
-      "description": "Just latency and response test.",
+      "description": "Automated Financial & Group Analytics Dashboard with Rotation & JSON Export",
       "example": true
     },
     {
-      "id": "info",
-      "name": "!info",
+      "id": "audit",
+      "name": "!audit",
       "type": "utility",
-      "category": "system",
-      "access": "user",
+      "category": "admin",
+      "access": "owner",
       "status": "stable",
       "releaseDate": null,
       "version": "2.0.1",
       "aliases": [],
-      "tags": [],
-      "description": null,
-      "example": false
+      "tags": [
+        "admin"
+      ],
+      "description": "Sistem monitoring audit, health, auto-report 3 hari, & Master Analytics/Security Export",
+      "example": true
     },
     {
-      "id": "help",
-      "name": "!help",
+      "id": "blacklist",
+      "name": "!blacklist",
       "type": "utility",
-      "category": "system",
-      "access": "user",
+      "category": "admin",
+      "access": "owner",
       "status": "stable",
       "releaseDate": null,
       "version": "2.0.1",
       "aliases": [],
-      "tags": [],
-      "description": null,
-      "example": false
+      "tags": [
+        "admin"
+      ],
+      "description": "Manajemen blacklist profesional dengan auto-LID resolution & custom penalty",
+      "example": true
     },
     {
-      "id": "menu",
-      "name": "!menu",
+      "id": "exportcmd",
+      "name": "!exportcmd",
       "type": "utility",
-      "category": "system",
-      "access": "user",
+      "category": "developer",
+      "access": "owner",
       "status": "stable",
       "releaseDate": null,
       "version": "2.0.1",
-      "aliases": [],
-      "tags": [],
-      "description": null,
-      "example": false
+      "aliases": [
+        "!dumpcmd",
+        "!exportcommands"
+      ],
+      "tags": [
+        "developer"
+      ],
+      "description": "Mengekstrak seluruh metadata command bot secara rekursif ke dalam format JSON standar.",
+      "example": true
     },
     {
-      "id": "credit",
-      "name": "!credit",
+      "id": "kill",
+      "name": "!kill",
       "type": "utility",
-      "category": "system",
-      "access": "user",
+      "category": "admin",
+      "access": "owner",
       "status": "stable",
       "releaseDate": null,
       "version": "2.0.1",
       "aliases": [],
-      "tags": [],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "status",
-      "name": "!status",
-      "type": "utility",
-      "category": "system",
-      "access": "user",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [],
-      "description": null,
-      "example": false
+      "tags": [
+        "admin"
+      ],
+      "description": "Mematikan bot secara permanen",
+      "example": true
     },
     {
       "id": "monitor",
@@ -134,368 +128,92 @@
       "version": "2.0.1",
       "aliases": [],
       "tags": [
-        "owner"
+        "system"
       ],
-      "description": null,
-      "example": false
+      "description": "Monitoring dashboard khusus owner",
+      "example": true
     },
     {
-      "id": "profile",
-      "name": "!profile",
-      "type": "account",
+      "id": "shutdown",
+      "name": "!shutdown",
+      "type": "utility",
       "category": "system",
-      "access": "user",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "audit",
-      "name": "!audit",
-      "type": "security",
-      "category": "security",
       "access": "owner",
       "status": "stable",
       "releaseDate": null,
       "version": "2.0.1",
       "aliases": [],
       "tags": [
-        "owner",
-        "security"
+        "system"
       ],
-      "description": null,
-      "example": false
+      "description": "Menonaktifkan bot sementara",
+      "example": true
     },
     {
-      "id": "blacklist",
-      "name": "!blacklist",
-      "type": "security",
-      "category": "security",
+      "id": "start",
+      "name": "!start",
+      "type": "utility",
+      "category": "system",
       "access": "owner",
       "status": "stable",
       "releaseDate": null,
       "version": "2.0.1",
       "aliases": [],
       "tags": [
-        "owner",
-        "security"
+        "system"
       ],
-      "description": null,
-      "example": false
+      "description": "Mengaktifkan bot kembali",
+      "example": true
     },
     {
-      "id": "note",
-      "name": "!note",
-      "type": "productivity",
-      "category": "productivity",
-      "access": "user",
-      "status": "stable",
+      "id": "help",
+      "name": "!help",
+      "type": "utility",
+      "category": "system",
+      "access": "public",
+      "status": "active",
       "releaseDate": null,
       "version": "2.0.1",
-      "aliases": [],
-      "tags": [],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "remind",
-      "name": "!remind",
-      "type": "productivity",
-      "category": "productivity",
-      "access": "user",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "skyghostid",
-      "name": "!skyghostid",
-      "type": "developer",
-      "category": "developer",
-      "access": "user",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
+      "aliases": [
+        "!h"
+      ],
       "tags": [
-        "developer"
+        "system"
       ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "s-latestup",
-      "name": "!s latestUp",
-      "type": "developer",
-      "category": "developer",
-      "access": "user",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "developer"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "s-projectshow",
-      "name": "!s projectShow",
-      "type": "developer",
-      "category": "developer",
-      "access": "user",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "developer"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "s-apidir",
-      "name": "!s APIdir",
-      "type": "developer",
-      "category": "developer",
-      "access": "user",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "developer"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "s-servicestatus",
-      "name": "!s serviceStatus",
-      "type": "developer",
-      "category": "developer",
-      "access": "user",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "developer"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "s-officiallinks",
-      "name": "!s officialLinks",
-      "type": "developer",
-      "category": "developer",
-      "access": "user",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "developer"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "s-devprofile",
-      "name": "!s devProfile",
-      "type": "developer",
-      "category": "developer",
-      "access": "user",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "developer"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "ytmp3",
-      "name": "!ytmp3",
-      "type": "media",
-      "category": "media",
-      "access": "user",
-      "status": "maintenance",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "maintenance"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "ytmp4",
-      "name": "!ytmp4",
-      "type": "media",
-      "category": "media",
-      "access": "user",
-      "status": "maintenance",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "maintenance"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "tiktok",
-      "name": "!tiktok",
-      "type": "media",
-      "category": "media",
-      "access": "user",
-      "status": "maintenance",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "maintenance"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "insta",
-      "name": "!insta",
-      "type": "media",
-      "category": "media",
-      "access": "user",
-      "status": "maintenance",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "maintenance"
-      ],
-      "description": null,
-      "example": false
+      "description": "Menampilkan bantuan command berdasarkan kategori",
+      "example": true
     },
     {
       "id": "facebook",
       "name": "!facebook",
-      "type": "media",
+      "type": "utility",
       "category": "media",
       "access": "user",
-      "status": "maintenance",
+      "status": "stable",
       "releaseDate": null,
       "version": "2.0.1",
       "aliases": [],
       "tags": [
-        "maintenance"
+        "media"
       ],
-      "description": null,
-      "example": false
+      "description": "Download video dari Facebook",
+      "example": true
     },
     {
-      "id": "twitter",
-      "name": "!twitter",
-      "type": "media",
+      "id": "insta",
+      "name": "!insta",
+      "type": "utility",
       "category": "media",
       "access": "user",
-      "status": "maintenance",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "maintenance"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "image",
-      "name": "!image",
-      "type": "media",
-      "category": "image",
-      "access": "user",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "gif",
-      "name": "!gif",
-      "type": "media",
-      "category": "image",
-      "access": "user",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "sticker",
-      "name": "!sticker",
-      "type": "media",
-      "category": "image",
-      "access": "user",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "lottie",
-      "name": "!lottie",
-      "type": "media",
-      "category": "image",
-      "access": "owner",
       "status": "stable",
       "releaseDate": null,
       "version": "2.0.1",
       "aliases": [],
       "tags": [
-        "owner"
+        "media"
       ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "studio",
-      "name": "!studio",
-      "type": "media",
-      "category": "image",
-      "access": "owner",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "owner"
-      ],
-      "description": null,
-      "example": false
+      "description": "Download media dari Instagram (foto/video)",
+      "example": true
     },
     {
       "id": "scrape",
@@ -507,9 +225,426 @@
       "releaseDate": null,
       "version": "2.0.1",
       "aliases": [],
-      "tags": [],
-      "description": null,
-      "example": false
+      "tags": [
+        "tools"
+      ],
+      "description": "Scrape data dari website",
+      "example": true
+    },
+    {
+      "id": "tiktok",
+      "name": "!tiktok",
+      "type": "utility",
+      "category": "tools",
+      "access": "owner",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "tools"
+      ],
+      "description": "Download video dari TikTok (tanpa watermark)",
+      "example": true
+    },
+    {
+      "id": "twitter",
+      "name": "!twitter",
+      "type": "utility",
+      "category": "media",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "media"
+      ],
+      "description": "Download media dari Twitter/X (foto/video)",
+      "example": true
+    },
+    {
+      "id": "ytmp3",
+      "name": "!ytmp3",
+      "type": "utility",
+      "category": "tools",
+      "access": "owner",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "tools"
+      ],
+      "description": "Download YouTube audio (MP3 format)",
+      "example": true
+    },
+    {
+      "id": "ytmp4",
+      "name": "!ytmp4",
+      "type": "utility",
+      "category": "tools",
+      "access": "owner",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "tools"
+      ],
+      "description": "Download YouTube video (MP4 format)",
+      "example": true
+    },
+    {
+      "id": "menu",
+      "name": "!menu",
+      "type": "utility",
+      "category": "system",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "system"
+      ],
+      "description": "Menampilkan daftar command",
+      "example": true
+    },
+    {
+      "id": "profile",
+      "name": "!profile",
+      "type": "utility",
+      "category": "management",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [
+        "!daftar",
+        "!me",
+        "!account",
+        "!akun"
+      ],
+      "tags": [
+        "management"
+      ],
+      "description": "Sistem manajemen profil pengguna, tier akses (user/vip/vvip), konfigurasi timezone, dan panduan lengkap",
+      "example": true
+    },
+    {
+      "id": "aistudio",
+      "name": "!aistudio",
+      "type": "utility",
+      "category": "vvip-tools",
+      "access": "vvip",
+      "status": "prototype",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "vvip-tools"
+      ],
+      "description": "Fitur AI canggih khusus member VVIP",
+      "example": true
+    },
+    {
+      "id": "aistudiov",
+      "name": "!aistudiov",
+      "type": "utility",
+      "category": "vvip-tools",
+      "access": "vvip",
+      "status": "prototype",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "vvip-tools"
+      ],
+      "description": "Fitur AI canggih khusus member VVIP",
+      "example": true
+    },
+    {
+      "id": "cron",
+      "name": "!cron",
+      "type": "utility",
+      "category": "vvip-tools",
+      "access": "vvip",
+      "status": "prototype",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "vvip-tools"
+      ],
+      "description": "Distributed Cron-Job Scheduler & Advanced Web Scraper",
+      "example": true
+    },
+    {
+      "id": "gameme",
+      "name": "!gameMe",
+      "type": "utility",
+      "category": "special",
+      "access": "user",
+      "status": "prototype",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "special"
+      ],
+      "description": "Daftar Game Popular SkyGhostID, Minecraft Server Info, etc",
+      "example": true
+    },
+    {
+      "id": "gif",
+      "name": "!gif",
+      "type": "utility",
+      "category": "image",
+      "access": "user",
+      "status": "prototype",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "image"
+      ],
+      "description": "Membuat atau mengonversi animasi GIF",
+      "example": true
+    },
+    {
+      "id": "groupbackup",
+      "name": "!groupBackup",
+      "type": "utility",
+      "category": "management",
+      "access": "vip",
+      "status": "prototype",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [
+        "!exportchat"
+      ],
+      "tags": [
+        "management"
+      ],
+      "description": "Group data & analytics history exporter",
+      "example": true
+    },
+    {
+      "id": "lottie",
+      "name": "!lottie",
+      "type": "utility",
+      "category": "image",
+      "access": "vip",
+      "status": "prototype",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "image"
+      ],
+      "description": "Lottie file JSON editor dan converter",
+      "example": true
+    },
+    {
+      "id": "productme",
+      "name": "!productMe",
+      "type": "utility",
+      "category": "special",
+      "access": "user",
+      "status": "prototype",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "special"
+      ],
+      "description": "-",
+      "example": true
+    },
+    {
+      "id": "sandbox",
+      "name": "!sandbox",
+      "type": "utility",
+      "category": "vvip-tools",
+      "access": "vvip",
+      "status": "prototype",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "vvip-tools"
+      ],
+      "description": "Modular Plugin Sandbox (Dynamic Runtime Execution)",
+      "example": true
+    },
+    {
+      "id": "skyhub",
+      "name": "!skyHub",
+      "type": "utility",
+      "category": "devhub",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [
+        "!skyghost",
+        "!s",
+        "!skyghostid",
+        "!skyhub"
+      ],
+      "tags": [
+        "devhub"
+      ],
+      "description": "Developer Hub (skyghost.id)",
+      "example": true
+    },
+    {
+      "id": "studio",
+      "name": "!studio",
+      "type": "utility",
+      "category": "image",
+      "access": "vip",
+      "status": "prototype",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "image"
+      ],
+      "description": "Media & image editing studio tingkat lanjut",
+      "example": true
+    },
+    {
+      "id": "topupme",
+      "name": "!topupMe",
+      "type": "utility",
+      "category": "special",
+      "access": "user",
+      "status": "prototype",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "special"
+      ],
+      "description": "Topup Assistant via WhatsApp ke Website official admin",
+      "example": true
+    },
+    {
+      "id": "vault",
+      "name": "!vault",
+      "type": "utility",
+      "category": "vvip-tools",
+      "access": "vvip",
+      "status": "prototype",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "vvip-tools"
+      ],
+      "description": "Encrypted Cloud Vault & Session Locker (AES-256)",
+      "example": true
+    },
+    {
+      "id": "voice",
+      "name": "!voice",
+      "type": "utility",
+      "category": "vvip-tools",
+      "access": "vvip",
+      "status": "prototype",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "vvip-tools"
+      ],
+      "description": "AI Voice Cloning & Text-to-Speech Customization",
+      "example": true
+    },
+    {
+      "id": "credit",
+      "name": "!credit",
+      "type": "utility",
+      "category": "system",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "system"
+      ],
+      "description": "Menampilkan info pembuat bot",
+      "example": true
+    },
+    {
+      "id": "image",
+      "name": "!image",
+      "type": "utility",
+      "category": "image",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "image"
+      ],
+      "description": "Ultimate Image Processor: Kompres, Resize, Filter, Blur, Sharpen, Border, Crop, & Watermark",
+      "example": true
+    },
+    {
+      "id": "info",
+      "name": "!info",
+      "type": "utility",
+      "category": "system",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "system"
+      ],
+      "description": "Menampilkan informasi bot",
+      "example": true
+    },
+    {
+      "id": "note",
+      "name": "!note",
+      "type": "utility",
+      "category": "tools",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [
+        "!notes",
+        "!catatan"
+      ],
+      "tags": [
+        "tools"
+      ],
+      "description": "Manajemen catatan lengkap (buat, list, baca, hapus, rename)",
+      "example": true
+    },
+    {
+      "id": "ping",
+      "name": "!ping",
+      "type": "utility",
+      "category": "system",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [],
+      "tags": [
+        "system"
+      ],
+      "description": "Test respons bot",
+      "example": true
     },
     {
       "id": "qr",
@@ -520,10 +655,76 @@
       "status": "stable",
       "releaseDate": null,
       "version": "2.0.1",
+      "aliases": [
+        "!qrcode",
+        "!qrgen",
+        "!readqr",
+        "!scanqr",
+        "!qr2text"
+      ],
+      "tags": [
+        "tools"
+      ],
+      "description": "Generate atau scan QR code dalam satu perintah",
+      "example": true
+    },
+    {
+      "id": "remind",
+      "name": "!remind",
+      "type": "utility",
+      "category": "management",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [
+        "!reminder",
+        "!alarm",
+        "!pengingat"
+      ],
+      "tags": [
+        "management"
+      ],
+      "description": "Sistem pengingat profesional berbasis Timezone User dengan persitensi DB & Importance Level API",
+      "example": true
+    },
+    {
+      "id": "status",
+      "name": "!status",
+      "type": "utility",
+      "category": "system",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
       "aliases": [],
-      "tags": [],
-      "description": null,
-      "example": false
+      "tags": [
+        "system"
+      ],
+      "description": "Menampilkan status bot",
+      "example": true
+    },
+    {
+      "id": "sticker",
+      "name": "!sticker",
+      "type": "utility",
+      "category": "media",
+      "access": "user",
+      "status": "stable",
+      "releaseDate": null,
+      "version": "2.0.1",
+      "aliases": [
+        "!s",
+        "!stiker",
+        "!toimage",
+        "!toimg",
+        "!img"
+      ],
+      "tags": [
+        "media"
+      ],
+      "description": "Membua sticker dari gambar/URL atau convert sticker ke image",
+      "example": true
     },
     {
       "id": "translate",
@@ -534,252 +735,16 @@
       "status": "stable",
       "releaseDate": null,
       "version": "2.0.1",
-      "aliases": [],
-      "tags": [],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "approve",
-      "name": "!approve",
-      "type": "management",
-      "category": "admin",
-      "access": "owner",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "owner",
-        "approval"
+      "aliases": [
+        "!tr",
+        "!terjemah",
+        "!terjemahkan"
       ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "sentinel",
-      "name": "!sentinel",
-      "type": "security",
-      "category": "premium",
-      "access": "owner",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
       "tags": [
-        "owner",
-        "stable"
+        "tools"
       ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "sandbox",
-      "name": "!sandbox",
-      "type": "premium",
-      "category": "premium",
-      "access": "vvip",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "vvip"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "bridge",
-      "name": "!bridge",
-      "type": "premium",
-      "category": "premium",
-      "access": "vvip",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "vvip"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "vault",
-      "name": "!vault",
-      "type": "premium",
-      "category": "premium",
-      "access": "vvip",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "vvip"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "voice",
-      "name": "!voice",
-      "type": "premium",
-      "category": "premium",
-      "access": "vvip",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "vvip"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "analytics",
-      "name": "!analytics",
-      "type": "premium",
-      "category": "premium",
-      "access": "vvip",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "vvip"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "cron",
-      "name": "!cron",
-      "type": "premium",
-      "category": "premium",
-      "access": "vvip",
-      "status": "stable",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "vvip"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "aistudio",
-      "name": "!aistudio",
-      "type": "unknown",
-      "category": "undocumented",
-      "access": "user",
-      "status": "undocumented",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "needs-description"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "aistudiov",
-      "name": "!aistudiov",
-      "type": "unknown",
-      "category": "undocumented",
-      "access": "user",
-      "status": "undocumented",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "needs-description"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "backupgroup",
-      "name": "!backupgroup",
-      "type": "unknown",
-      "category": "undocumented",
-      "access": "user",
-      "status": "undocumented",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "needs-description"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "kill",
-      "name": "!kill",
-      "type": "unknown",
-      "category": "undocumented",
-      "access": "user",
-      "status": "undocumented",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "needs-description"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "shutdown",
-      "name": "!shutdown",
-      "type": "unknown",
-      "category": "undocumented",
-      "access": "user",
-      "status": "undocumented",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "needs-description"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "start",
-      "name": "!start",
-      "type": "unknown",
-      "category": "undocumented",
-      "access": "user",
-      "status": "undocumented",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "needs-description"
-      ],
-      "description": null,
-      "example": false
-    },
-    {
-      "id": "skyghost",
-      "name": "!skyghost",
-      "type": "unknown",
-      "category": "undocumented",
-      "access": "user",
-      "status": "undocumented",
-      "releaseDate": null,
-      "version": "2.0.1",
-      "aliases": [],
-      "tags": [
-        "needs-description"
-      ],
-      "description": null,
-      "example": false
+      "description": "Translate text antar bahasa",
+      "example": true
     }
   ]
 }
